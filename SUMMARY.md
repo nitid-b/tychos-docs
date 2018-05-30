@@ -8,6 +8,10 @@
 * Video Guides
   * Overview
 
+## Learn
+
+* [Learn](./learn/learn.md)
+
 ## For Teachers
 
 * Example Lessons
