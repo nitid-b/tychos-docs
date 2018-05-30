@@ -1,6 +1,6 @@
 # Table of contents
 
-* Initial page
+* [Initial page](README.md)
 * [Login](https://tychos.org/login)
 
 ## Getting Started
