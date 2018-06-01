@@ -6,8 +6,8 @@
 ## Getting Started
 
 * Interface Overview
-* [Video Guides](getting-started/video-guides.md)
-  * [Tutorial 1: An Overview](getting-started/video-guides/video-tutorial-1.md)
+* [Video Guides](getting-started/video-guides/README.md)
+  * [Tutorial 1: An Overview](getting-started/video-guides/tutorial-1-an-overview.md)
   * Tutorial 2: Simulation Settings
 * Language Reference \(API\)
   * Comments
@@ -24,8 +24,7 @@
 
 * Example Lessons
 * Teacher Video Guides
-  * [Tutorial 1: Creating A Scenario] (for-teachers/teacher-video-guides/teacher-video-tutorial-1.md)
-  
+  * Tutorial 1: Creating A Scenario
 * Writing Goals
 * Canvas LTI Installation Guide
 
