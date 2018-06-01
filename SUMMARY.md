@@ -5,20 +5,16 @@
 
 ## Getting Started
 
+* Overview
 * Video Guides
-  * Overview
-
-## Learn
-
-* [Learn](./learn/learn.md)
 
 ## For Teachers
 
 * Example Lessons
 
-## Tychos Language Reference
-
 ## About Us
 
 * [Blog](http://blog.tychos.org/)
+
+## Reference
 
