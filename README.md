@@ -1,6 +1,10 @@
-# Initial page
+# Tcyhos Resources and Reference
 
-This is an update to the initial page. I'm testing the GitHub integration.
+## Getting Started
 
-Interesting. Now I'm on GitHub, adding more content. Does it blend??
+## For Teachers
+
+## About Us
+
+
 
