@@ -5,16 +5,18 @@
 
 ## Getting Started
 
-* Overview
+* Interface Overview
 * Video Guides
+* Language Reference (API)
 
 ## For Teachers
 
 * Example Lessons
+* Teacher Video Guides
+* Writing Goals
+* Canvas LTI Installation Guide
 
 ## About Us
 
+* The Team
 * [Blog](http://blog.tychos.org/)
-
-## Reference
-
