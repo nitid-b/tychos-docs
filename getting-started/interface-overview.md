@@ -38,13 +38,13 @@ The instructor or whoever wrote the scenario may include specific goals that the
 
 ### Initial State Panel
 
-You program the initial conditions of the simulation, e.g. creating particles, setting their initial position, creating graphs to view particular aspects of your simulation, and perhaps defining initial values such as the gravity or mass. The code that you write appears on the left of the screen, while each line of code is evaluated and its output appears on the right in blue text. You can learn more about what kind of code can be written in this pane by visiting the [Language Reference](language-reference-api/)
+You program the initial conditions of the simulation, e.g. creating particles, setting their initial position, creating graphs to view particular aspects of your simulation, and perhaps defining initial values such as the gravity or mass. The code that you write appears on the left of the screen, while each line of code is evaluated and its output appears on the right in blue text. You can learn more about what kind of code can be written in this pane by visiting the [Language Reference](language-reference-api.md)
 
 ![](../.gitbook/assets/ui_is_panel.png)
 
 ### Calculations Pane
 
-In this panel, you write your program for calculating what the simulation does for every moment in time as the simulation runs - called a frame. E.g. for a simulation of particles moving in space, you might examine several particles and calculate a new position for them given their existing momentum. Just as in the **Initial State** pane, the code that you write appears on the left of the screen, while each line of code is evaluated and its output appears on the right in blue text. You can learn more about what kind of code can be written in this pane by visiting the [Language Reference](language-reference-api/)  
+In this panel, you write your program for calculating what the simulation does for every moment in time as the simulation runs - called a frame. E.g. for a simulation of particles moving in space, you might examine several particles and calculate a new position for them given their existing momentum. Just as in the **Initial State** pane, the code that you write appears on the left of the screen, while each line of code is evaluated and its output appears on the right in blue text. You can learn more about what kind of code can be written in this pane by visiting the [Language Reference](language-reference-api.md)  
 
 
 ![](../.gitbook/assets/ui_calc_panel.png)

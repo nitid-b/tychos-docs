@@ -9,16 +9,7 @@
 * [Video Guides](getting-started/video-guides/README.md)
   * [Tutorial 1: An Overview](getting-started/video-guides/tutorial-1-an-overview.md)
   * Tutorial 2: Simulation Settings
-* Language Reference \(API\)
-  * Comments
-  * Operators
-  * Functions
-  * Objects
-    * Particle
-    * Block
-    * Helix
-  * Graphs
-  * Meters
+* [Language Reference \(API\)](getting-started/language-reference-api.md)
 
 ## For Teachers
 
