@@ -1,7 +1,6 @@
 # Table of contents
 
-* [Tcyhos Resources and Reference](README.md)
-* [Login](https://tychos.org/login)
+* [Tychos Documentation and Reference](README.md)
 
 ## Getting Started
 

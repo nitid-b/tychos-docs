@@ -1,10 +1,6 @@
-# Tcyhos Resources and Reference
+# Tychos Documentation and Reference
 
-## Getting Started
+## How To Get Started
 
-## For Teachers
-
-## About Us
-
-
+Tychos is a tool for teaching and learning about computational modeling of physical phenomenon. It has been designed to be easy to use and contains many features that make it an ideal 
 
