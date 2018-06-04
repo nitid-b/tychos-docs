@@ -12,7 +12,8 @@
 
 ## For Teachers
 
-* [Example Lessons](for-teachers/example-lessons.md)
+* [Example Lessons](for-teachers/example-lessons/README.md)
+  * [Introduction to Coding in Tychos](for-teachers/example-lessons/introduction-to-coding-in-tychos.md)
 * Teacher Video Guides
   * Tutorial 1: Creating A Scenario
 * Writing Goals
