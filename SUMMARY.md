@@ -7,7 +7,7 @@
 * [Interface Overview](getting-started/interface-overview.md)
 * [Video Guides](getting-started/video-guides/README.md)
   * [Tutorial 1: An Overview](getting-started/video-guides/tutorial-1-an-overview.md)
-  * Tutorial 2: Simulation Settings
+  * [Tutorial 2: Simulation Settings](getting-started/video-guides/tutorial-2-simulation-settings.md)
 * [Language Reference \(API\)](getting-started/language-reference-api.md)
 
 ## For Teachers
