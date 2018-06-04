@@ -12,7 +12,7 @@
 
 ## For Teachers
 
-* Example Lessons
+* [Example Lessons](for-teachers/example-lessons.md)
 * Teacher Video Guides
   * Tutorial 1: Creating A Scenario
 * Writing Goals
