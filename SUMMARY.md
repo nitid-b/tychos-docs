@@ -17,7 +17,7 @@
 * Teacher Video Guides
   * Tutorial 1: Creating A Scenario
 * Writing Goals
-* Canvas LTI Installation Guide
+* [Canvas LTI Installation Guide](for-teachers/canvas-lti-installation-guide.md)
 
 ## About Us
 
