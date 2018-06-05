@@ -4,7 +4,8 @@
 
 ## Getting Started
 
-* [Interface Overview](getting-started/interface-overview.md)
+* [Interface Overview](getting-started/interface-overview/README.md)
+  * [Demonstrations](getting-started/interface-overview/demonstrations.md)
 * [Video Guides](getting-started/video-guides/README.md)
   * [Tutorial 1: An Overview](getting-started/video-guides/tutorial-1-an-overview.md)
   * [Tutorial 2: Simulation Settings](getting-started/video-guides/tutorial-2-simulation-settings.md)
