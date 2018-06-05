@@ -1,4 +1,4 @@
-# Introduction to Coding in Tychos
+# Lesson 1: Introduction to Coding in Tychos
 
 ## Lesson Overview and Objectives
 
