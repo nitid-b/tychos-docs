@@ -16,7 +16,7 @@
   * [Introduction to Coding in Tychos](for-teachers/example-lessons/introduction-to-coding-in-tychos.md)
 * Teacher Video Guides
   * Tutorial 1: Creating A Scenario
-* Writing Goals
+* [Writing Goals](for-teachers/writing-goals.md)
 * [Canvas LTI Installation Guide](for-teachers/canvas-lti-installation-guide.md)
 
 ## About Us
