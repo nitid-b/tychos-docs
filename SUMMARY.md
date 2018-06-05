@@ -9,6 +9,8 @@
   * [Tutorial 1: An Overview](getting-started/video-guides/tutorial-1-an-overview.md)
   * [Tutorial 2: Simulation Settings](getting-started/video-guides/tutorial-2-simulation-settings.md)
   * [Tutorial 3: Model A Force](getting-started/video-guides/tutorial-3-model-a-force.md)
+  * [Tutorial 4: Meters](getting-started/video-guides/tutorial-4-meters.md)
+  * [Tutorial 5: Graphs](getting-started/video-guides/untitled.md)
 * [Demonstrations](getting-started/demonstrations.md)
 * [Language Reference \(API\)](getting-started/language-reference-api.md)
 
