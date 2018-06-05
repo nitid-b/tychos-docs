@@ -10,9 +10,7 @@ description: >-
 
 The main application screen shows the simulated world filled with particles, and any graphs that have been defined. The main window primarily consists of a two dimensional grid that represents a limitless two dimensional euclidean space. This is the space where all simulation animations take place.
 
-![](../.gitbook/assets/ui_world_view.png)
-
-
+![The Tychos World View](../.gitbook/assets/ui_world_view%20%281%29.png)
 
 There are several key user interface elements on the screen that serve important functions for accessing different aspects of the application:
 
