@@ -212,8 +212,6 @@ random([2, 3])  # returns a 2x3 matrix with random numbers between 0 and 1
 
 The `drawArrow` function draws an arrow and is commonly used to illustrate vectors for a particle. drawArrow should be called in the Calculations editor because it only draws the arrow for the current frame. If you call drawArrow\(\) in the Initial State editor, you will not see anything.
 
-![](https://tychos.org/static/help/drawArrow_1.png)![](https://tychos.org/static/help/drawArrow_2.png)
-
 `drawArrow(pos=[0,0], size=[1,0], color="black", components)` -&gt; returns and draws an Arrow object
 
 * `pos` — coordinates for the starting point of the arrow as an \[X,Y\] matrix.
@@ -221,7 +219,11 @@ The `drawArrow` function draws an arrow and is commonly used to illustrate vecto
 * `color` — Optional HTML color value for your arrow, e.g. "red" or "\#ff0000".
 * `components` — Optional flag that determines if vector components are drawn, a value of `true` displays the components.
 
-Example — The illustrations at right were drawn using these commands:
+![Arrow without components](https://tychos.org/static/help/drawArrow_2.png)
+
+![Arrow with components](https://tychos.org/static/help/drawArrow_1.png)
+
+Example — The illustrations above were drawn using these commands:
 
 ```text
 # Initial State editor
@@ -230,6 +232,25 @@ p = Particle([0,0], 10, "green")
 # Calculations editor
 drawArrow(p.pos, [20, 20], "purple")        # just the diagonal arrow
 drawArrow(p.pos, [20, 20], "purple", true)  # also draw X and Y components
+```
+
+#### **drawLine**
+
+The `drawLine` function draws a line and is commonly used to illustrate some connecting member like a string or cable, but could really represent anything you like. `drawLine` should be called in the Calculations editor because it only draws the line for the current frame. If you call `drawLine` in the Initial State editor, you will not see anything.
+
+`drawLine(pos=[0,0], pos2=[10,0], color="black", thickess=1)` -&gt; returns and draws an Line object
+
+* `pos` — coordinates for the starting point of the line as an \[X,Y\] matrix.
+* `pos2` — the coordinates of the end point of the line as an \[X,Y\] matrix.
+* `color` — Optional HTML color value for the line, e.g. "red" or "\#ff0000".
+* `thickness` — Optional stroke value that determines the visual thickness of the line.
+
+Example — The illustration above was drawn using this command:
+
+```text
+# Calculations editor
+drawLine([0, 0], [20, 20], "purple", 2)        # just the diagonal line
+drawLine([20, 20], [0, 20], "green", 3)  # another line
 ```
 
 #### **unit\_vector**
@@ -259,6 +280,20 @@ Example:
 
 ```text
 magnitude([3, 4])             # returns 5
+```
+
+#### **direction**
+
+This function returns a scalar degree measurement in polar form. This is helpful when you want to know the direction of a Particle's velocity vector.
+
+`direction(vec)` -&gt; returns the scaler degree  measurement of the vector `vec` heading in polar form.
+
+* `vec` - any two dimensional vector as a \[X, Y\] matrix.
+
+Example:
+
+```text
+direction([4, 4])             # returns 45
 ```
 
 ### Comparison Functions
