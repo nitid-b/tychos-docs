@@ -11,6 +11,7 @@
   * [Tutorial 3: Model A Force](getting-started/video-guides/tutorial-3-model-a-force.md)
   * [Tutorial 4: Meters](getting-started/video-guides/tutorial-4-meters.md)
   * [Tutorial 5: Graphs](getting-started/video-guides/untitled.md)
+  * [Tutorial 6: Visualizing Vectors](getting-started/video-guides/tutorial-6-visualizing-vectors.md)
 * [Demonstrations](getting-started/demonstrations.md)
 * [Language Reference \(API\)](getting-started/language-reference-api.md)
 
