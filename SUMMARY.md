@@ -21,6 +21,6 @@
 
 ## About Us
 
-* The Team
+* [The Team](about-us/the-team.md)
 * [Blog](http://blog.tychos.org/)
 
