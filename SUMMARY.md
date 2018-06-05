@@ -20,10 +20,14 @@
 * [Example Lessons](for-teachers/example-lessons/README.md)
   * [Lesson 1: Introduction to Coding in Tychos](for-teachers/example-lessons/introduction-to-coding-in-tychos.md)
   * [Lesson 2: The Tychos World](for-teachers/example-lessons/lesson-2-the-tychos-world.md)
+  * [Lesson 3: Simulating Change](for-teachers/example-lessons/lesson-3-simulating-change.md)
+  * [Lesson 4: Simulating Constant Velocity](for-teachers/example-lessons/lesson-4-simulating-constant-velocity.md)
 * [Teacher Video Guides](for-teachers/teacher-video-guides/README.md)
   * [Tutorial 1: Creating A Scenario](for-teachers/teacher-video-guides/tutorial-1-creating-a-scenario.md)
 * [Writing Goals](for-teachers/writing-goals.md)
 * [Canvas LTI Installation Guide](for-teachers/canvas-lti-installation-guide.md)
+* [Lesson 5: Using Motion Graphs](for-teachers/lesson-5-using-motion-graphs.md)
+* [Lesson 6: Modeling The Momentum Principle](for-teachers/lesson-6-modeling-the-momentum-principle.md)
 
 ## About Us
 
