@@ -493,9 +493,11 @@ rocket.image = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Spacecraft.p
 
 ![A Block that looks like a rocket.](../.gitbook/assets/direction.png)
 
+{% hint style="info" %}
 The above image also demonstrates the use of the `direction`  function as well as the `rotate` method:
 
 `rocket.rotate(direction(rocket.v))`
+{% endhint %}
 
 {% hint style="warning" %}
 The image attribute only works in the most recent versions of Chrome and Firefox. This feature is in BETA, so be careful when using it because nothing will be visible in other browsers.
