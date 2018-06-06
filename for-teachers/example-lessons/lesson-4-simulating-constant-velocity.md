@@ -1,5 +1,7 @@
 # Lesson 4: Simulating Constant Velocity
 
+## Lesson Objectives and Overview
+
 In this lesson, students will put together what they have learned in the previous lessons and begin simulating motion.
 
 * Students will learn how to give a Particle object a velocity.
@@ -154,7 +156,7 @@ These vector arrows are used to help represent the motion of the particle, and I
 
 Try adding a vector arrow to your moving particles.
 
-### Conclusion
+## Conclusion
 
 You should now be familiar with the following:
 
