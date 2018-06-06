@@ -1,8 +1,6 @@
----
-description: The following is a reference guide for the Tychos programming interface.
----
-
 # Language Reference \(API\)
+
+The following reference guide identifies the language syntax, built in variables, functions, and classes that are used to code your simulations in Tychos. Tychos uses the [MathNotepad language](http://mathnotepad.com/docs/functions.html). We have included documentation here for some of the helpful functions defined in the MathNotepad language. This is not a complete list of all functions available in MathNotepad, just ones that might be commonly used in Tychos for building scenarios as well as defining goals for those scenarios.
 
 ## Comments
 
