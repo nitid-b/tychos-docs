@@ -545,5 +545,23 @@ mx.read(particle.pos[X])
 mv.read(particle.vel[X])
 ```
 
+### Keyboard
 
+The `keyboard` object represents your computers keyboard and has commands to see if any keys are pressed during a simulation.
+
+#### **keyboard.is\_down**
+
+`keyboard.is_down(key)` -&gt; `boolean` — Return 1/0 whether `key` is currently down
+
+#### **keyboard.last\_pressed**
+
+`keyboard.last_pressed(key)` -&gt; `boolean` — was `key` typed? i.e. key was pushed down then released.
+
+### Mouse
+
+The `mouse` object represents your computers mouse. It has a command to get if buttons are pressed.
+
+#### **mouse.is\_down**
+
+`mouse.is_down(button_num=0)` -&gt; `boolean` — Return whether the mouse button is pressed. `button_num` — Which button to check? 0 = primary button, 1 = secondary, etc.
 
