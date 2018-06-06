@@ -27,8 +27,6 @@ Goal 2 - _description:_ Increment 'b' by 2 every frame - _when:_ `frame_count ==
 
 With these two goals, you are checking that the student has properly set the initial condition, and that every frame, `b`'s value is incrementing by two.
 
-![](http://localhost:3000/static/writing_goals/goal-3.png)
-
 ## Writing a Goal
 
 In order to write a goal, you need to be logged in as an Instructor. Only instructors see blue edit buttons over the goals. See illustration.
