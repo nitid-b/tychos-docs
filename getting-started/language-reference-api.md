@@ -464,6 +464,28 @@ b3 = Block([40, 0], [20, 10], "orange")
 b1.pos = b1.pos + [1, 0.25]
 ```
 
+#### Block.rotate
+
+One big difference between the Particle class and the Block class is that Blocks can rotate. This allows you to simulate rotational behavior.
+
+`block.rotate(angle=0)` — Rotates the block object by a given angle value in degrees. This method should only be called from the **Calculations** code editor. 
+
+![Three different blocks rotated at different angles](../.gitbook/assets/block_rotate.png)
+
+Example:
+
+```text
+# Initial State editor
+b1 = Block([-20, 0], [20, 10], "green")
+b2 = Block([0, 0], [20, 10], "blue")
+b3 = Block([20, 0], [20, 10], "orange")
+
+# Calculations editor
+b1.rotate(-45)
+b2.rotate(90)
+b3.rotate(45)
+```
+
 ### Graph
 
 A `Graph` is a 2-dimensional chart of data that you specify in the Calculations editor. Each Graph that is created will appear on the right side of the World View. Your program needs to add points to the graph with the `plot`command.
