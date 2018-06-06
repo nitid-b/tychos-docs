@@ -23,7 +23,7 @@
   * [Lesson 3: Simulating Change](for-teachers/example-lessons/lesson-3-simulating-change.md)
   * [Lesson 4: Simulating Constant Velocity](for-teachers/example-lessons/lesson-4-simulating-constant-velocity.md)
   * [Lesson 5: Using Motion Graphs](for-teachers/example-lessons/lesson-5-using-motion-graphs.md)
-  * [Lesson 7: Simulating A Projectile](for-teachers/example-lessons/lesson-7-simulating-a-projectile.md)
+  * [Lesson 6: Modeling The Momentum Principle](for-teachers/example-lessons/lesson-7-simulating-a-projectile.md)
   * [Lesson 7: Modeling A Projectile](for-teachers/example-lessons/lesson-6-modeling-the-momentum-principle.md)
   * [Lesson 8: Conditional Forces](for-teachers/example-lessons/lesson-8-conditional-forces.md)
 * [Teacher Video Guides](for-teachers/teacher-video-guides/README.md)

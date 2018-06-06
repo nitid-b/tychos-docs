@@ -2,11 +2,10 @@
 
 ## Lesson Objectives and Overview
 
-Students finally get to see how a force can be modeled in Tychos and how the change in a particle's state can be calculated using the momentum principle.
+In the previous lesson, students were introduced to the momentum principle. They will now learn how to model a particle tht is experiencing only a vertical gravitational force, and how a particle's vertical velocity will change while its horizontal velocity remains constant.
 
-* Students will learn how to define a mass attribute for a particle.
-* Students will learn how to calculate a change in momentum due to an applied force.
-* Students will learn how to update a particle's velocity based on a change in momentum caused by the force.
+* Students will learn how to define a gravitational force acting on a particle.
+* Students will learn how to model a projectile, and analyze its behavior.
 
 We have seen that we can simulate a particle's behavior when it is acted upon by forces in two dimensions. When the NET force on the particle points diagonally in space, then we can see that the object's momentum will change in both dimensions.
 

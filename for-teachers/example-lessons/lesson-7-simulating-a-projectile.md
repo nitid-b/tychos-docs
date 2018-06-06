@@ -1,11 +1,12 @@
-# Lesson 7: Simulating A Projectile
+# Lesson 6: Modeling The Momentum Principle
 
 ## Lesson Objectives and Overview
 
-In the previous lesson, students were introduced to the momentum principle. They will now learn how to model a particle tht is experiencing only a vertical gravitational force, and how a particle's vertical velocity will change while its horizontal velocity remains constant.
+Students finally get to see how a force can be modeled in Tychos and how the change in a particle's state can be calculated using the momentum principle.
 
-* Students will learn how to define a gravitational force acting on a particle.
-* Students will learn how to model a projectile, and analyze its behavior.
+* Students will learn how to define a mass attribute for a particle.
+* Students will learn how to calculate a change in momentum due to an applied force.
+* Students will learn how to update a particle's velocity based on a change in momentum caused by the force.
 
 The momentum principle is a very powerful principle that helps us understand the cause and effect relationship between forces acting on an object, and how that object's state of motion is changing. The momentum principle can be stated like this:
 
