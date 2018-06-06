@@ -484,6 +484,23 @@ b2.rotate(90)
 b3.rotate(45)
 ```
 
+Blocks can also be represented with an image by setting the image attribute of the object. The text must be a URI link to a graphic file that can be a PNG, SVG, GIF, or JPEG image.
+
+```text
+rocket = Block([0, 0], [10, 10], "purple")
+rocket.image = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Spacecraft.png"
+```
+
+![A Block that looks like a rocket.](../.gitbook/assets/direction.png)
+
+The above image also demonstrates the use of the `direction`  function as well as the `rotate` method:
+
+`rocket.rotate(direction(rocket.v))`
+
+{% hint style="warning" %}
+The image attribute only works in the most recent versions of Chrome and Firefox. This feature is in BETA, so be careful when using it because nothing will be visible in other browsers.
+{% endhint %}
+
 ### Graph
 
 A `Graph` is a 2-dimensional chart of data that you specify in the Calculations editor. Each Graph that is created will appear on the right side of the World View. Your program needs to add points to the graph with the `plot`command.
