@@ -2,9 +2,10 @@
 
 * [Tychos Documentation and Reference](README.md)
 
-## Getting Started
+## Learn
 
-* [Interface Overview](getting-started/interface-overview.md)
+* [Overview](getting-started/overview.md)
+* [The Interface](getting-started/interface-overview.md)
 * [Video Guides](getting-started/video-guides/README.md)
   * [Tutorial 1: An Overview](getting-started/video-guides/tutorial-1-an-overview.md)
   * [Tutorial 2: Simulation Settings](getting-started/video-guides/tutorial-2-simulation-settings.md)
@@ -17,6 +18,7 @@
 
 ## For Teachers
 
+* [Getting Started](for-teachers/getting-started.md)
 * [Example Lessons](for-teachers/example-lessons/README.md)
   * [Lesson 1: Introduction to Coding in Tychos](for-teachers/example-lessons/introduction-to-coding-in-tychos.md)
   * [Lesson 2: The Tychos World](for-teachers/example-lessons/lesson-2-the-tychos-world.md)

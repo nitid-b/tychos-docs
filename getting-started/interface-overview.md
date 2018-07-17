@@ -1,10 +1,4 @@
----
-description: >-
-  The following page describes the primary interface elements of the Tychos
-  application.
----
-
-# Interface Overview
+# The Interface
 
 ## World View
 
