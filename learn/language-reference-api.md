@@ -321,7 +321,7 @@ deepEqual(p1.pos, p2.pos)   # returns false
 equal(p1.pos, p2.pos)       # returns [true, false]
 ```
 
-#### `larger\(a, b\)` or `a > b`
+#### `larger(a, b)` or `a > b`
 
 The function tests if one value \(a\) is larger than another \(b\). It returns a boolean value of `true` or `false`.
 
@@ -332,7 +332,7 @@ The function tests if one value \(a\) is larger than another \(b\). It returns a
 larger(2, 2)        # same as 2 > 2
 ```
 
-#### `smaller\(a, b\)` or `a < b'
+#### `smaller(a, b)` or `a < b'
 
 The function tests if one value \(a\) is smaller than another \(b\). It returns a boolean value of `true` or `false`.
 
@@ -343,7 +343,7 @@ The function tests if one value \(a\) is smaller than another \(b\). It returns 
 smaller(2, 2)        # returns false
 ```
 
-#### `unequal\(a, b\)` or `a != b`
+#### `unequal(a, b)` or `a != b`
 
 The function tests if two values \(a and b\) are unequal. It returns a boolean value of `true` or `false`.
 
