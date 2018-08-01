@@ -332,7 +332,7 @@ The function tests if one value \(a\) is larger than another \(b\). It returns a
 larger(2, 2)        # same as 2 > 2
 ```
 
-#### `smaller(a, b)` or `a < b'
+#### `smaller(a, b)` or `a < b`
 
 The function tests if one value \(a\) is smaller than another \(b\). It returns a boolean value of `true` or `false`.
 
@@ -361,9 +361,9 @@ Comparison operators return `true` or `false` but these also evaluate to 1 \(tru
 F = (t > 10) * [10, 10]
 ```
 
-#### `if(test, true_value, false_value)`
+#### `if(test, true_result, false_result)`
 
-The `if()` function returns `true_value` or `false_value` depending on `test`.
+The `if()` function returns `true_result` or `false_result` depending on `test`.
 
 ```
 if(true, 3, 44)                 # returns 3
@@ -515,10 +515,6 @@ rocket.image = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Spacecraft.p
 The above image also demonstrates the use of the `direction`  function as well as the `rotate` method:
 
 `rocket.rotate(direction(rocket.v))`
-{% endhint %}
-
-{% hint style="warning" %}
-The image attribute only works in the most recent versions of Chrome and Firefox. This feature is in BETA, so be careful when using it because nothing will be visible in other browsers.
 {% endhint %}
 
 ### Graph
