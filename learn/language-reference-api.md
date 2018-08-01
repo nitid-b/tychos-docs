@@ -1,4 +1,4 @@
-# Language Reference \(API\)
+# Tychos Language Reference
 
 The following reference guide identifies the language syntax, built in variables, functions, and classes that are used to code your simulations in Tychos. Tychos uses the [MathNotepad language](http://mathnotepad.com/docs/functions.html). We have included documentation here for some of the helpful functions defined in the MathNotepad language. This is not a complete list of all functions available in MathNotepad, just ones that might be commonly used in Tychos for building scenarios as well as defining goals for those scenarios.
 
@@ -53,13 +53,13 @@ Tychos uses the following operators to perform basic math calculations:
 
 You can also use the following basic math functions:
 
-#### **pow\(base, power\)**
+#### **base ^ power**
 
 The `pow(base, power)` function takes two arguments, raising the `base` by the `power`.
 
 ```text
 # returns number 8
-pow(2, 3)
+2 ^ 3
 ```
 
 #### **sqrt\(positive\_number\)**
@@ -298,17 +298,18 @@ direction([4, 4])             # returns 45
 
 The following functions are used to compare two values as being equal or unequal as well as testing if one value is larger or smaller than another. These are very helpful when writing goals for students.
 
-#### **equal\(x, y\)**
+#### **`equal(a, b)` or `a == b`**
 
 The function tests if two values \(x and y\) are equal. It returns a boolean value of `true` or `false`.
 
 ```text
-equal(2 + 2, 3)        # returns false
-equal(2 + 2, 4)        # returns true
-equal(t, 10)           # returns true if t is 10, or false if it is not.
+2 + 2 == 3             # returns false
+2 + 2 == 4             # returns true
+t == 10                # returns true if t is 10, or false if it is not.
+equal(2 + 2, 4)        # same as 2 + 2 == 4
 ```
 
-#### **deepEqual\(x, y\)**
+#### **deepEqual\(a, b\)**
 
 This function is similar to `equal`, but it tests element wise whether two matrices are equal. It returns a boolean value of `true` or `false`. The code below demonstrates the difference between `equal` and `deepEqual`:
 

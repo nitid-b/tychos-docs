@@ -4,17 +4,17 @@
 
 ## Learn
 
-* [Overview](getting-started/overview.md)
-* [The Interface](getting-started/interface-overview.md)
-* [Video Guides](getting-started/video-guides/README.md)
-  * [Tutorial 1: An Overview](getting-started/video-guides/tutorial-1-an-overview.md)
-  * [Tutorial 2: Simulation Settings](getting-started/video-guides/tutorial-2-simulation-settings.md)
-  * [Tutorial 3: Model A Force](getting-started/video-guides/tutorial-3-model-a-force.md)
-  * [Tutorial 4: Meters](getting-started/video-guides/tutorial-4-meters.md)
-  * [Tutorial 5: Graphs](getting-started/video-guides/untitled.md)
-  * [Tutorial 6: Visualizing Vectors](getting-started/video-guides/tutorial-6-visualizing-vectors.md)
-* [Demonstrations](getting-started/demonstrations.md)
-* [Language Reference \(API\)](getting-started/language-reference-api.md)
+* [Overview](learn/overview.md)
+* [The Interface](learn/interface-overview.md)
+* [Video Guides](learn/video-guides/README.md)
+  * [Tutorial 1: An Overview](learn/video-guides/tutorial-1-an-overview.md)
+  * [Tutorial 2: Simulation Settings](learn/video-guides/tutorial-2-simulation-settings.md)
+  * [Tutorial 3: Model A Force](learn/video-guides/tutorial-3-model-a-force.md)
+  * [Tutorial 4: Meters](learn/video-guides/tutorial-4-meters.md)
+  * [Tutorial 5: Graphs](learn/video-guides/untitled.md)
+  * [Tutorial 6: Visualizing Vectors](learn/video-guides/tutorial-6-visualizing-vectors.md)
+* [Demonstrations](learn/demonstrations.md)
+* [Tychos Language Reference](learn/language-reference-api.md)
 
 ## For Teachers
 

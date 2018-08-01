@@ -4,7 +4,7 @@ The following video tutorials demonstrate how a teacher could use Tychos as a te
 
 If you are not yet familiar with Tychos, we recommend checking out our introductory video series first:
 
-{% page-ref page="../../getting-started/video-guides/" %}
+{% page-ref page="../../learn/video-guides/" %}
 
 
 

@@ -8,7 +8,7 @@ Tychos is a tool for teaching and learning about computational modeling of physi
 
 If you are new to computational modeling, we suggest taking a look out our video tutorials first as a way to get oriented with Tychos. 
 
-{% page-ref page="getting-started/video-guides/" %}
+{% page-ref page="learn/video-guides/" %}
 
 ### Demonstrations
 
@@ -18,7 +18,7 @@ Once you have watched these videos, please take a look at our demonstrations.
 
 The Language Reference is a good place to go to get more information about the coding interface, syntax and built in objects that you can use in Tychos.
 
-{% page-ref page="getting-started/language-reference-api.md" %}
+{% page-ref page="learn/language-reference-api.md" %}
 
 ### Example Lessons
 

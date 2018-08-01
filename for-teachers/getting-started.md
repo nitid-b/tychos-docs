@@ -10,7 +10,3 @@ The following resources have been created to help you use Tychos as a teaching t
 
 {% page-ref page="canvas-lti-installation-guide.md" %}
 
-{% page-ref page="https://tychos.org/doc/teacher/forum.html" %}
-
-
-

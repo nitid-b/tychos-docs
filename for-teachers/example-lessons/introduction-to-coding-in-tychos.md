@@ -166,7 +166,7 @@ sin(.57)
 
 Notice in these lines of code that the function is defined by a name - like `pow` and `sqrt` and then you type an open parentheses "\(" and then the input values for the function, and then a closed parentheses "\)". The first function `pow` takes two inputs, the base and then the power. These are separated by a comma to identify the two inputs.
 
-There are other functions that can be used to perform various calculations, and we will cover many of these this year. For a listing of others, you can check out the [Tychos Language Reference](../../getting-started/language-reference-api.md#other-useful-functions)
+There are other functions that can be used to perform various calculations, and we will cover many of these this year. For a listing of others, you can check out the [Tychos Language Reference](../../learn/language-reference-api.md#other-useful-functions)
 
 ### Defining and Using Matrices
 
