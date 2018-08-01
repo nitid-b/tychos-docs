@@ -321,42 +321,59 @@ deepEqual(p1.pos, p2.pos)   # returns false
 equal(p1.pos, p2.pos)       # returns [true, false]
 ```
 
-#### **larger\(x, y\)**
+#### `larger\(a, b\)` or `a > b`
 
-The function tests if one value \(x\) is larger than another \(y\). It returns a boolean value of `true` or `false`.
+The function tests if one value \(a\) is larger than another \(b\). It returns a boolean value of `true` or `false`.
 
 ```text
-larger(2, 3)        # returns false
-larger(3, 2)        # returns true
-larger(2, 2)        # returns false
+2 > 3               # returns false
+3 > 2               # returns true
+2 > 2               # returns false
+larger(2, 2)        # same as 2 > 2
 ```
 
-#### **smaller\(x, y\)**
+#### `smaller\(a, b\)` or `a < b'
 
-The function tests if one value \(x\) is smaller than another \(y\). It returns a boolean value of `true` or `false`.
+The function tests if one value \(a\) is smaller than another \(b\). It returns a boolean value of `true` or `false`.
 
 ```text
-smaller(2, 3)        # returns true
-smaller(3, 2)        # returns false
+2 < 3                # returns true
+3 < 2                # returns false
+2 < 2                # returns false
 smaller(2, 2)        # returns false
 ```
 
-#### **unequal\(x, y\)**
+#### `unequal\(a, b\)` or `a != b`
 
-The function tests if two values \(x and y\) are unequal. It returns a boolean value of `true` or `false`.
+The function tests if two values \(a and b\) are unequal. It returns a boolean value of `true` or `false`.
 
 ```text
-unequal(2 + 2, 3)        # returns true
-unequal(2 + 2, 4)        # returns false
-unequal(t, 10)           # returns false if t is 10, or true if it is not.
+2 + 2 != 3              # returns true
+unequal(2 + 2, 3)       # true -- same as 2 + 2 != 3
+2 + 2 != 4              # returns false
+t != 10                 # returns false if t is 10, or true if it is not.
 ```
 
 Comparison operators return `true` or `false` but these also evaluate to 1 \(true\) or 0 \(false\). This can allow you to conditonally assign a value to a variable depending on the evaluation of the comparison. See the code below as an example:
 
 ```text
 # If t is larger than 10, then the value of F is [10, 10], otherwise it is 0.
-F = larger(t, 10) * [10, 10]
+F = (t > 10) * [10, 10]
 ```
+
+#### `if(test, true_value, false_value)`
+
+The `if()` function returns `true_value` or `false_value` depending on `test`.
+
+```
+if(true, 3, 44)                 # returns 3
+if(false, 3, 44)                # returns 44
+if(1 > 2, 3, 44)                # test is false; therefore returns 44
+a = 1
+b = 1
+if(a == b, "YAY", "darn")       # test is true; therefore returns "YAY"
+```
+
 
 ### Logical Operators
 
@@ -382,8 +399,8 @@ You can use the `and` operator to test if two comparisons are both true:
 ```text
 x = 2
 
-smaller(x, 3) and equal(x, 2)  # returns true
-smaller(x, 3) and unequal(x, 2) # returns false
+(x < 3) and (x == 2)  # returns true
+(x < 3) and (x != 2)  # returns false
 ```
 
 #### **or**
@@ -406,8 +423,8 @@ You can use the `or` operator to test if one of two comparisons are true:
 ```text
 x = 2
 
-smaller(x, 3) or equal(x, 3)  # one is true, so returns true
-smaller(x, 1) or equal(x, 3) # both are false, so returns false
+smaller(x, 3) or equal(x, 3)    # one is true, so returns true
+(x < 1) or (x == 3)             # both are false, so returns false
 ```
 
 ## Built-in Classes
