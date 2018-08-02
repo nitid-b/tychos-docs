@@ -39,7 +39,7 @@ If our particle's position is given as the vector ![LaTeX: \vec{s}](https://srcs
 Let's say that a particle's initial position is \[0, 0\] and it's position is changing at the rate of 10 meters per second in the x direction and 5 meters per second in the y direction. We want to track the movement of the particle by identifying the position at 0.1 second intervals. The table below shows the particle's position from 0 to 1 second:
 
 | Time | x position | y position |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| :--- | :--- | :--- |
 | 0.1 s | ![](https://srcs.instructure.com/equation_images/0m%255C%253A%252B%255C%253A%255Cleft%28.1s%255C%253A%255Ccdot%255Cfrac%257B%255C%253A10m%257D%257Bs%257D%255Cright%29%253D1m) | ![](https://srcs.instructure.com/equation_images/0m%255C%253A%252B%255Cleft%28.1s%255C%253A%255Ccdot%255Cfrac%257B%255C%253A5m%257D%257Bs%257D%255Cright%29%253D.5m) |
 | 0.2 s | ![](https://srcs.instructure.com/equation_images/1m%255C%253A%252B%255C%253A%255Cleft%28.1s%255C%253A%255Ccdot%255Cfrac%257B%255C%253A10m%257D%257Bs%257D%255Cright%29%253D2m) | ![](https://srcs.instructure.com/equation_images/.5m%255C%253A%252B%255Cleft%28.1s%255C%253A%255Ccdot%255Cfrac%257B%255C%253A5m%257D%257Bs%257D%255Cright%29%253D1m) |
 | 0.3 s | ![](https://srcs.instructure.com/equation_images/2m%255C%253A%252B%255C%253A%255Cleft%28.1s%255C%253A%255Ccdot%255Cfrac%257B%255C%253A10m%257D%257Bs%257D%255Cright%29%253D3m) | ![](https://srcs.instructure.com/equation_images/1m%255C%253A%252B%255Cleft%28.1s%255C%253A%255Ccdot%255Cfrac%257B%255C%253A5m%257D%257Bs%257D%255Cright%29%253D1.5m) |

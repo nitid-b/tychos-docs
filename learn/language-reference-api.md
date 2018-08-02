@@ -90,7 +90,7 @@ The `sin(angle)` function is used to evaluate the trigonometric sine value for a
 
 ```text
 # returns number 1
-sin(pi/2)  
+sin(pi/2)
 ```
 
 #### **cos\(angle\)**
@@ -117,7 +117,7 @@ The `asin(value)` function is used to evaluate the trigonometric arcsine value \
 
 ```text
 # returns number 1.57
-asin(1)  
+asin(1)
 ```
 
 #### **acos\(value\)**
@@ -284,7 +284,7 @@ magnitude([3, 4])             # returns 5
 
 This function returns a scalar degree measurement in polar form. This is helpful when you want to know the direction of a Particle's velocity vector.
 
-`direction(vec)` -&gt; returns the scaler degree  measurement of the vector `vec` heading in polar form.
+`direction(vec)` -&gt; returns the scaler degree measurement of the vector `vec` heading in polar form.
 
 * `vec` - any two dimensional vector as a \[X, Y\] matrix.
 
@@ -298,7 +298,7 @@ direction([4, 4])             # returns 45
 
 The following functions are used to compare two values as being equal or unequal as well as testing if one value is larger or smaller than another. These are very helpful when writing goals for students.
 
-#### **`equal(a, b)` or `a == b`**
+#### `equal(a, b)` **or** `a == b`
 
 The function tests if two values \(x and y\) are equal. It returns a boolean value of `true` or `false`.
 
@@ -365,7 +365,7 @@ F = (t > 10) * [10, 10]
 
 The `if()` function returns `true_result` or `false_result` depending on `test`.
 
-```
+```text
 if(true, 3, 44)                 # returns 3
 if(false, 3, 44)                # returns 44
 if(1 > 2, 3, 44)                # test is false; therefore returns 44
@@ -373,7 +373,6 @@ a = 1
 b = 1
 if(a == b, "YAY", "darn")       # test is true; therefore returns "YAY"
 ```
-
 
 ### Logical Operators
 
@@ -484,7 +483,7 @@ b1.pos = b1.pos + [1, 0.25]
 
 One big difference between the Particle class and the Block class is that Blocks can rotate. This allows you to simulate rotational behavior.
 
-`block.rotate(angle=0)` — Rotates the block object by a given angle value in degrees. This method should only be called from the **Calculations** code editor. 
+`block.rotate(angle=0)` — Rotates the block object by a given angle value in degrees. This method should only be called from the **Calculations** code editor.
 
 ![Three different blocks rotated at different angles](../.gitbook/assets/block_rotate.png)
 
@@ -512,7 +511,7 @@ rocket.image = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Spacecraft.p
 ![A Block that looks like a rocket.](../.gitbook/assets/direction.png)
 
 {% hint style="info" %}
-The above image also demonstrates the use of the `direction`  function as well as the `rotate` method:
+The above image also demonstrates the use of the `direction` function as well as the `rotate` method:
 
 `rocket.rotate(direction(rocket.v))`
 {% endhint %}
@@ -554,26 +553,60 @@ A `Meter` is a numeric display of data that you specify in the Calculations edit
 
 ![](https://tychos.org/static/help/ref/ref_meter.png)
 
-`Meter(title="")` -&gt; Returns a Meter
+`Meter(title="", color=default_color)` -&gt; Returns a Meter
 
 * `title` = Optional text that will appear at the top of the meter.
 
 #### **Meter.read**
 
-`meter.read(value)` — Reads the value and displays it on the Meter.
+`meter.read(value, units)` — Reads the value and displays it on the Meter.
+
+* `value` = Numeric value to be displayed.
+* `units` = String representing the unit label to be displayed.
 
 Example:
 
 ```text
 # Initial State editor
-mt = Meter("Time")
-mx = Meter("X Position")
-mv = Meter("X Velocity")
+mt = Meter("Time", "green")
+mx = Meter("X Position", "blue")
+mv = Meter("X Velocity", "orange")
 
 # Calculations editor
-mt.read(t)
-mx.read(particle.pos[X])
-mv.read(particle.vel[X])
+mt.read(t, "s")
+mx.read(particle.pos[X], "m")
+mv.read(particle.vel[X], "m/s")
+```
+
+### Gauge
+
+A `Gauge` is an analog display of data that is very similar to a `Meter` that you specify in the Initial Sate pane. Each `Gauge` that is created will appear on the left side of the World View.  Gauges also need to to be set up with a specific minimum and maximum value for identifying the range of the `Gauge`. Your program needs to tell the `Gauge` what value it needs to display by using the `read` command.
+
+![Gauges with different colors and different ranges. ](../.gitbook/assets/new_gauges_1.png)
+
+`Gauge(title="", min=0, max=100, color="default_color")` -&gt; Returns a Gauge
+
+* `title` = Optional text that will appear at the top of the Gauge.
+* `min` = The minimum value of the Gauge
+* `max` = The maximum value of the Gauge
+
+#### **Gauge.read**
+
+`gauge.read(value)` — Reads the value and displays it in the Gauge.
+
+Example:
+
+```text
+# Initial State editor
+g1 = Gauge("Value 1", 0, 200, "orange")
+g2 = Gauge("Value 2", -100, 100, "purple")
+g3 = Gauge("Value 3", 0, 100, "blue")
+
+# Calculations editor
+val = 44
+g1.read(val)
+g2.read(val)
+g3.read(val)
 ```
 
 ### Keyboard

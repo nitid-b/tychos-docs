@@ -53,7 +53,7 @@ Before the simualtion time reaches 2 seconds, Tychos evaluates the statement as 
 Conditional statements use comparison operators to compare values of two things. You have seen some of the comparison operators before, but some you might not be familar with. Here is a list of some of the comparison operators and how they work:
 
 | Operator | Example | Evaluates | Description |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | &lt; | 1 &lt; 2 | true | Less than |
 | &gt; | 1 &gt; 2 | false | Greater than |
 | &lt;= | 1 &lt;= 2 | true | Less than or equal |
