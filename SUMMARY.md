@@ -32,7 +32,7 @@
   * [Tutorial 1: Creating A Scenario](for-teachers/teacher-video-guides/tutorial-1-creating-a-scenario.md)
 * [Writing Goals](for-teachers/writing-goals.md)
 * [Canvas LTI Installation Guide](for-teachers/canvas-lti-installation-guide.md)
-* [Teacher Forum](for-teachers/teacher-forum.md)
+* [Teacher Forum](https://tychos.org/doc/teacher/forum.html)
 
 ## About Us
 
