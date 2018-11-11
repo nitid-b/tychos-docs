@@ -516,6 +516,35 @@ The above image also demonstrates the use of the `direction` function as well as
 `rocket.rotate(direction(rocket.v))`
 {% endhint %}
 
+### Spring
+
+You can represent a spring in Tychos using the `Spring` class. A `Spring` is a visual representation of a common elastic connector that displays a given number of coils that dynamically change shape once the dimensions of the  `Spring` are changed in the **Calculations Pane**.
+
+`Spring(pos1=[0,0], pos2=[100, 0], color=default_color, coils=5, width=10, thickness=1)` -&gt; returns a Spring object
+
+* `pos1` — The position of one end of the Spring. If you don't specify a position, the default value of \[0,0\] is used.
+* `pos2` — The position of one other end of the Spring. If you don't specify a position, the default value of \[100,0\] is used.
+* `color` — The block will be drawn in this color. Use HTML colors e.g. "\#ff3300", "blue".
+* `coils` — This is the number of coils represented.
+* `width` — This is the width of the coils.
+* `thickness` — This is the stroke weight of the coils.
+
+![Three different Spring objects](../.gitbook/assets/springs.png)
+
+The code below shows the three different Springs above that have different lengths, widths and coil numbers. The Particles are shown just for reference.
+
+```text
+# Initial State editor
+p = Particle([0, 0], 2, "green")
+spring = Spring([0, 20], [0, 0], "black", 20, 2)
+p = Particle([10, 0], 2, "green")
+spring = Spring([10, 20], [10, 0], "black", 10, 4)
+p = Particle([20, 0], 2, "green")
+spring = Spring([20, 20], [20, 0], "black", 20, 2)
+```
+
+These attributes may also be modified after the Spring is created. In particular, one will usually change the `pos2` attribute of a Spring in the Calculations editor to show Spring's movement or deformation. 
+
 ### Graph
 
 A `Graph` is a 2-dimensional chart of data that you specify in the Calculations editor. Each Graph that is created will appear on the right side of the World View. Your program needs to add points to the graph with the `plot`command.
@@ -551,7 +580,7 @@ g_color.plot(0, -30, "blue")
 
 A `Meter` is a numeric display of data that you specify in the Calculations editor. Each Meter that is created will appear on the left side of the World View. Your program needs to tell the Meter what value it needs to display by using the `read` command.
 
-![](https://tychos.org/static/help/ref/ref_meter.png)
+![A Meter showing time \(t\)](../.gitbook/assets/meter-example.png)
 
 `Meter(title="", color=default_color)` -&gt; Returns a Meter
 
@@ -568,14 +597,10 @@ Example:
 
 ```text
 # Initial State editor
-mt = Meter("Time", "green")
-mx = Meter("X Position", "blue")
-mv = Meter("X Velocity", "orange")
+mt = Meter("Time")
 
 # Calculations editor
 mt.read(t, "s")
-mx.read(particle.pos[X], "m")
-mv.read(particle.vel[X], "m/s")
 ```
 
 ### Gauge

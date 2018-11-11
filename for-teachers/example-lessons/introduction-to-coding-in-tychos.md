@@ -26,7 +26,7 @@ We are going to start slowly by covering some programming terminology that you w
 
 Click on the link below to open the Tychos scenario in a new browser tab where you can follow along, or use the embedded frame that contains the scenario below:
 
-{% embed data="{\"url\":\"https://tychos.org/scenarios/13\",\"type\":\"link\",\"title\":\"Tychos – Hackable Simulations\",\"icon\":{\"type\":\"icon\",\"url\":\"https://tychos.org/favicon.ico\",\"aspectRatio\":0}}" %}
+{% embed url="https://tychos.org/scenarios/13" %}
 
 ### The Simulation "Hack" Panels
 
