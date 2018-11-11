@@ -243,12 +243,14 @@ The `drawLine` function draws a line and is commonly used to illustrate some con
 * `color` — Optional HTML color value for the line, e.g. "red" or "\#ff0000".
 * `thickness` — Optional stroke value that determines the visual thickness of the line.
 
+![](../.gitbook/assets/line-example.png)
+
 Example — The illustration above was drawn using this command:
 
 ```text
 # Calculations editor
-drawLine([0, 0], [20, 20], "purple", 2)        # just the diagonal line
-drawLine([20, 20], [0, 20], "green", 3)  # another line
+drawLine([0, 0], [20, 20], "purple", 2)  # a line
+drawLine([0, 0], [10, 20], "green", 10)  # another line
 ```
 
 #### **unit\_vector**
