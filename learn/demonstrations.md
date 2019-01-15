@@ -4,8 +4,8 @@ Below are some Tychos demonstration scenarios. These have been designed to illus
 
 Enjoy exploring these.
 
-* [Demo: Constant Velocity Object](https://tychos.org/scenarios/630)
-* [Demo: Modeling A Projectile](https://tychos.org/scenarios/629)
+* [Demo: Constant Velocity Object](https://tychos.org/scenarios/988)
+* [Demo: Modeling A Projectile](https://tychos.org/scenarios/989)
 * [Demo: Orbiting Planet](https://tychos.org/scenarios/632)
 * [Demo: Air Resistance on a Falling Object](https://tychos.org/scenarios/631)
 * [Demo: Model A Rocket](https://tychos.org/scenarios/5)
