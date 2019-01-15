@@ -515,7 +515,7 @@ rocket.image = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Spacecraft.p
 {% hint style="info" %}
 The above image also demonstrates the use of the `direction` function as well as the `rotate` method:
 
-`rocket.rotate(direction(rocket.v))`
+`rocket.rotate(direction(rocket.v, "deg"))`
 {% endhint %}
 
 ### Spring
@@ -580,7 +580,7 @@ g_color.plot(0, -30, "blue")
 
 ### Meter
 
-A `Meter` is a numeric display of data that you specify in the Calculations editor. Each Meter that is created will appear on the left side of the World View. Your program needs to tell the Meter what value it needs to display by using the `read` command.
+A `Meter` is a numeric display of data that you specify in the Calculations editor. Each Meter that is created will appear on the left side of the World View. Your program needs to tell the Meter what value it needs to display by using the `display` command.
 
 ![A Meter showing time \(t\)](../.gitbook/assets/meter-example.png)
 
@@ -590,7 +590,7 @@ A `Meter` is a numeric display of data that you specify in the Calculations edit
 
 #### **Meter.read**
 
-`meter.read(value, units)` — Reads the value and displays it on the Meter.
+`meter.display(value, units)` — Displays the value on the Meter.
 
 * `value` = Numeric value to be displayed.
 * `units` = String representing the unit label to be displayed.
@@ -602,12 +602,12 @@ Example:
 mt = Meter("Time")
 
 # Calculations editor
-mt.read(t, "s")
+mt.display(t, "s")
 ```
 
 ### Gauge
 
-A `Gauge` is an analog display of data that is very similar to a `Meter` that you specify in the Initial Sate pane. Each `Gauge` that is created will appear on the left side of the World View.  Gauges also need to to be set up with a specific minimum and maximum value for identifying the range of the `Gauge`. Your program needs to tell the `Gauge` what value it needs to display by using the `read` command.
+A `Gauge` is an analog display of data that is very similar to a `Meter` that you specify in the Initial Sate pane. Each `Gauge` that is created will appear on the left side of the World View.  Gauges also need to to be set up with a specific minimum and maximum value for identifying the range of the `Gauge`. Your program needs to tell the `Gauge` what value it needs to display by using the `display` command.
 
 ![Gauges with different colors and different ranges. ](../.gitbook/assets/new_gauges_1.png)
 
@@ -619,7 +619,7 @@ A `Gauge` is an analog display of data that is very similar to a `Meter` that yo
 
 #### **Gauge.read**
 
-`gauge.read(value)` — Reads the value and displays it in the Gauge.
+`gauge.display(value)` — Displays the value in the Gauge.
 
 Example:
 
@@ -631,9 +631,36 @@ g3 = Gauge("Value 3", 0, 100, "blue")
 
 # Calculations editor
 val = 44
-g1.read(val)
-g2.read(val)
-g3.read(val)
+g1.display(val)
+g2.display(val)
+g3.display(val)
+```
+
+### Slider
+
+A `Slider` is an interactive widget that allows you link a value in your scenario to the current value of a horizontal slider.
+
+![A Slider widget](../.gitbook/assets/tychos_slider.png)
+
+`Slider(title="", min=0, max=100, step=1)` -&gt; Returns a Slider
+
+* `title` = Optional text that will appear at the top of the Slider.
+* `min` = The minimum value of the Slider
+* `max` = The maximum value of the Slider
+* `step` = The step increment of the Slider
+
+#### **Slider.read**
+
+`x = slider.val` — Returns the current value of the Slider. This is read/write.
+
+Example:
+
+```text
+# Initial State editor
+s1 = Slider("I'm A Slider", 0, 100, 2)
+
+# Calculations editor
+x = s1.val
 ```
 
 ### Keyboard
