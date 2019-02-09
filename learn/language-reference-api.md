@@ -129,13 +129,16 @@ The `acos(value)` function is used to evaluate the trigonometric arccosine value
 acos(1)
 ```
 
-#### **atan\(value\)**
+#### **atan2\(X, Y\)**
 
-The `atan(value)` function is used to evaluate the trigonometric arctangent value \(inverse tangent\) for a given input. The output angle is given in radians.
+The `atan2(value)` function is used to evaluate the trigonometric arctangent value \(inverse tangent\) for a given X and Y input. The output angle is given in radians.
 
 ```text
-# returns number .785
-atan(1)
+# returns number -0.785
+atan2(-1, 1)
+
+# returns 2.36
+atan2(1, -1)
 ```
 
 #### **deg\_to\_rad\(angle\)**
@@ -547,6 +550,10 @@ spring = Spring([20, 20], [20, 0], "black", 20, 2)
 
 These attributes may also be modified after the Spring is created. In particular, one will usually change the `pos2` attribute of a Spring in the Calculations editor to show Spring's movement or deformation. 
 
+## Interface Widgets
+
+Tychos also provides several widgets for displaying data in different ways as well as adding user interactivity so that your simulations can respond to input.
+
 ### Graph
 
 A `Graph` is a 2-dimensional chart of data that you specify in the Calculations editor. Each Graph that is created will appear on the right side of the World View. Your program needs to add points to the graph with the `plot`command.
@@ -559,23 +566,35 @@ A `Graph` is a 2-dimensional chart of data that you specify in the Calculations 
 
 `graph.plot(x, y, color=default_color)` — Adds a data point to your graph.
 
-![](https://tychos.org/static/writing_scenarios/graph.png)
-
 Example:
+
+![](../.gitbook/assets/graph_example.png)
 
 ```text
 # Initial State editor
-g = Graph("Graph with two points")
-g_color = Graph("Graph with color")
+g = Graph("Y Velocity")
 
 # Calculations editor
-g.plot(0, 0)
-g.plot(10, 30)
+# Graphing a particle projectile's Y velocity
+g.plot(t, particle.v[Y], "green")
+```
 
-g_color.plot(-10, 0, "red")
-g_color.plot(20, 0, "red")
-g_color.plot(0, 20, "blue")
-g_color.plot(0, -30, "blue")
+#### Graph.integrate
+
+`graph.integrate(color=default_color)` — When you call the `plot` function of a graph, you create a new plot set. You can then integrate this plot set. This is done by referencing the plot set's color. This returns the calculated area based on the trapezoidal method of approximation. 
+
+Example:
+
+![](../.gitbook/assets/integrate_example.png)
+
+```text
+# Initial State editor
+g = Graph("Y Velocity")
+
+# Calculations editor
+# Graphing a particle projectile's Y velocity
+g.plot(t, particle.v[Y], "green")
+g.integrate("green")
 ```
 
 ### Meter
@@ -588,7 +607,7 @@ A `Meter` is a numeric display of data that you specify in the Calculations edit
 
 * `title` = Optional text that will appear at the top of the meter.
 
-#### **Meter.read**
+#### **Meter.display**
 
 `meter.display(value, units)` — Displays the value on the Meter.
 
@@ -617,7 +636,7 @@ A `Gauge` is an analog display of data that is very similar to a `Meter` that yo
 * `min` = The minimum value of the Gauge
 * `max` = The maximum value of the Gauge
 
-#### **Gauge.read**
+#### **Gauge.display**
 
 `gauge.display(value)` — Displays the value in the Gauge.
 
@@ -651,7 +670,7 @@ A `Slider` is an interactive widget that allows you link a value in your scenari
 
 #### **Slider.read**
 
-`x = slider.val` — Returns the current value of the Slider. This is read/write.
+`x = slider.value` — Returns the current value of the Slider. This is read/write.
 
 Example:
 
@@ -660,10 +679,10 @@ Example:
 s1 = Slider("I'm A Slider", 0, 100, 2)
 
 # Calculations editor
-x = s1.val
+x = s1.value
 ```
 
-### Keyboard
+### keyboard
 
 The `keyboard` object represents your computers keyboard and has commands to see if any keys are pressed during a simulation.
 
@@ -675,7 +694,7 @@ The `keyboard` object represents your computers keyboard and has commands to see
 
 `keyboard.last_pressed(key)` -&gt; `boolean` — was `key` typed? i.e. key was pushed down then released.
 
-### Mouse
+### mouse
 
 The `mouse` object represents your computers mouse. It has a command to get if buttons are pressed.
 
