@@ -213,12 +213,13 @@ random([2, 3])  # returns a 2x3 matrix with random numbers between 0 and 1
 
 The `drawArrow` function draws an arrow and is commonly used to illustrate vectors for a particle. drawArrow should be called in the Calculations editor because it only draws the arrow for the current frame. If you call drawArrow\(\) in the Initial State editor, you will not see anything.
 
-`drawArrow(pos=[0,0], size=[1,0], color="black", components)` -&gt; returns and draws an Arrow object
+`drawArrow(pos=[0,0], size=[1,0], color="black", components=false, thickness=1)` -&gt; returns and draws an Arrow object
 
 * `pos` — coordinates for the starting point of the arrow as an \[X,Y\] matrix.
 * `size` — the vector to illustrate, e.g. \[10, 0\] will draw an arrow 10 units to the right.
 * `color` — Optional HTML color value for your arrow, e.g. "red" or "\#ff0000".
 * `components` — Optional flag that determines if vector components are drawn, a value of `true` displays the components.
+* `thickness` — Optional stroke value that determines the visual thickness of the arrow.
 
 ![Arrow without components](https://tychos.org/static/help/drawArrow_2.png)
 
@@ -289,14 +290,16 @@ magnitude([3, 4])             # returns 5
 
 This function returns a scalar degree measurement in polar form. This is helpful when you want to know the direction of a Particle's velocity vector.
 
-`direction(vec)` -&gt; returns the scaler degree measurement of the vector `vec` heading in polar form.
+`direction(vec, units="rad")` -&gt; returns the scaler degree measurement of the vector `vec` heading in polar form.
 
 * `vec` - any two dimensional vector as a \[X, Y\] matrix.
+* `units` - optional `deg` for degree measurement or the default of `rad` for radians. 
 
 Example:
 
 ```text
-direction([4, 4])             # returns 45
+direction([4, 4])             # returns .785
+direction([4, 4], "deg")        # returns 45
 ```
 
 ### Comparison Functions
@@ -655,9 +658,35 @@ g2.display(val)
 g3.display(val)
 ```
 
+## Interactivity
+
+The following section describes different user interface elements that can be used to create interactive simulations in Tychos.
+
+### Toggle
+
+A `Toggle` is an interactive widget that allows you associate a boolean value \(true or false\) with the state of the  `Toggle` widget.
+
+`Toggle(title="")` -&gt; Returns a Toggle
+
+* `title` = Optional text that will appear at the top of the Toggle.
+
+#### **Toggle.value**
+
+`x = toggle.value` — Returns the current value of the Toggle. This is read/write.
+
+Example:
+
+```text
+# Initial State editor
+t1 = Toggle("My Toggle")
+
+# Calculations editor
+isActive = t1.value
+```
+
 ### Slider
 
-A `Slider` is an interactive widget that allows you link a value in your scenario to the current value of a horizontal slider.
+A `Slider` is an interactive widget that allows you to link a value in your scenario to the current value of a horizontal slider.
 
 ![A Slider widget](../.gitbook/assets/tychos_slider.png)
 
@@ -668,7 +697,7 @@ A `Slider` is an interactive widget that allows you link a value in your scenari
 * `max` = The maximum value of the Slider
 * `step` = The step increment of the Slider
 
-#### **Slider.read**
+#### **Slider.value**
 
 `x = slider.value` — Returns the current value of the Slider. This is read/write.
 
