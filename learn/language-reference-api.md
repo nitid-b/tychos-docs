@@ -288,9 +288,9 @@ magnitude([3, 4])             # returns 5
 
 #### **direction**
 
-This function returns a scalar degree measurement in polar form. This is helpful when you want to know the direction of a Particle's velocity vector.
+This function returns a scalar angle measurement. This is helpful when you want to know the direction of a vector, like the direction of a velocity vector, or the direction of a force vector. The default return angle is given in radians, but can also be expressed in degrees.
 
-`direction(vec, units="rad")` -&gt; returns the scaler degree measurement of the vector `vec` heading in polar form.
+`direction(vec, units="rad")` -&gt; returns the scaler angle measurement of the vector `vec` heading in radian form or in degree form.
 
 * `vec` - any two dimensional vector as a \[X, Y\] matrix.
 * `units` - optional `deg` for degree measurement or the default of `rad` for radians. 
@@ -584,7 +584,7 @@ g.plot(t, particle.v[Y], "green")
 
 #### Graph.integrate
 
-`graph.integrate(color=default_color)` — When you call the `plot` function of a graph, you create a new plot set. You can then integrate this plot set. This is done by referencing the plot set's color. This returns the calculated area based on the trapezoidal method of approximation. 
+`graph.integrate(color=default_color)` — When you call the `plot` function of a graph, you create a new plot set. You can then integrate this plot set. This is done by referencing the plot set's color. This returns the calculated area based on the[ **trapezoidal method of approximation**](https://en.wikipedia.org/wiki/Trapezoidal_rule). 
 
 Example:
 
