@@ -633,11 +633,11 @@ A `Gauge` is an analog display of data that is very similar to a `Meter` that yo
 
 ![Gauges with different colors and different ranges. ](../.gitbook/assets/new_gauges_1.png)
 
-`Gauge(title="", min=0, max=100, color="default_color")` -&gt; Returns a Gauge
+`Gauge(title="", max=100, min=100, color="default_color")` -&gt; Returns a Gauge
 
 * `title` = Optional text that will appear at the top of the Gauge.
-* `min` = The minimum value of the Gauge
 * `max` = The maximum value of the Gauge
+* `min` = The minimum value of the Gauge
 
 #### **Gauge.display**
 
@@ -647,9 +647,9 @@ Example:
 
 ```text
 # Initial State editor
-g1 = Gauge("Value 1", 0, 200, "orange")
-g2 = Gauge("Value 2", -100, 100, "purple")
-g3 = Gauge("Value 3", 0, 100, "blue")
+g1 = Gauge("Value 1", 200, 0, "orange")
+g2 = Gauge("Value 2", 100, -100, "purple")
+g3 = Gauge("Value 3", 100, 0, "blue")
 
 # Calculations editor
 val = 44
