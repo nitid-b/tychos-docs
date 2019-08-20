@@ -725,9 +725,45 @@ The `keyboard` object represents your computers keyboard and has commands to see
 
 ### mouse
 
-The `mouse` object represents your computers mouse. It has a command to get if buttons are pressed.
+The `mouse` object represents your computer**'**s mouse.
+
+#### **mouse.pos**
+
+`mouse.pos` -&gt; `vec` — Returns two dimensional vector as a \[X, Y\] matrix representing the position of the mouse in the simulation space.
 
 #### **mouse.is\_down**
 
-`mouse.is_down(button_num=0)` -&gt; `boolean` — Return whether the mouse button is pressed. `button_num` — Which button to check? 0 = primary button, 1 = secondary, etc.
+`mouse.is_down(button_num=0)` -&gt; `boolean` — Returns whether the mouse button is pressed. `button_num` — Which button to check? 0 = primary button, 1 = secondary, etc.
+
+#### **mouse.is\_over**
+
+`mouse.is_over(object)` -&gt; `boolean` — Returns whether the mouse is positioned over an object that is either a `Particle` or a `Block`. `object` — A simulation object.
+
+## table
+
+The `table` object allows you to create and display rows of data in a table format. The table is viewable in the _Data Output_ tab of the _Hack Panel_.
+
+#### table.setColumns
+
+`table.setColumns(columns=[])` - You must first define the column headings for the table in the Initial State pane. The arguments are simply an array of string values representing the column headings of the table.
+
+#### table.addRow
+
+`table.addRow(row_data=[])` -  Once the table columns have been defined, you then need to define the row data to be added to the table. This is an array of any data type values.
+
+Example:
+
+```text
+# Initial State editor
+table.setColumns(["time", "x value", "y value"])
+
+# Calculations editor
+x = t * 2
+y = t / 2
+table.addRow([t, x, y])
+```
+
+The code above would generate this table:
+
+![The table output in the Data Output hack panel.](../.gitbook/assets/screen-shot-2019-08-19-at-9.57.13-pm.png)
 
