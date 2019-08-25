@@ -8,20 +8,24 @@ When using LTI, Canvas will tell Tychos who is logged in. This allows your stude
 
 ### Adding Tychos as a Canvas LTI App <a id="adding-tychos-as-a-canvas-lti-app"></a>
 
-This app can be installed as an LTI plugin with Instructure Canvas. Here is how to do it
+This app can be installed as an LTI plugin with Instructure Canvas. Here is how to do it:
 
 * In Canvas, go to Settings &gt; Apps &gt; View App Configurations
-* Click the blue "+" button. You should see the Add App form. Fill it out like so:
+* Click the blue "+" button. You should see the Add App form.
+* For the **Configuration Type** choose **By URL**.
+* For the **Configuration URL** use this URL: **https://tychos.org/lti\_config.xml**
 
-![](https://tychos.org/static/lti_help/Tychos-Canvas-external-apps-edit.png)
+The **Add App** form should look like this:
 
-### Adding a Tychos Scenario as a Canvas Module <a id="adding-a-tychos-scenario-as-a-canvas-module"></a>
+![](../.gitbook/assets/add_tychos_lti_tool.png)
 
-* Go to the Scenario you want to add. Take a note of the number in your URL. E.g. tychos.org/scenarios/13 means your scenario is number **13**.
+### Adding a Tychos Scenario to a Canvas Module \(or as an Assignment\) <a id="adding-a-tychos-scenario-as-a-canvas-module"></a>
+
+* Go to the Scenario you want to add. Take a note of the code at the end of the your URL. E.g. tychos.org/scenarios/xxxxxx means your scenario id id **xxxxxx**.
 * In Canvas, go to Modules &gt; "+" Button. You should see the Add Item to... popup. Choose:
 * Add: **External Tool**
 * Click on **Tychos**. Notice the URL gets filled in with a URL ending with `...tychos.org/lti`
-* **URL**: Add your scenario number from above to the end of the URL, e.g. `...tychos.org/lti/13`
+* **URL**: Add your scenario code from above to the end of the URL, e.g. `...tychos.org/lti/xxxxxx`
 * **Page Name**: copy the name of your Scenario
 * Click Add Item
 
