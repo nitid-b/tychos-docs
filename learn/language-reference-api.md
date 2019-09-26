@@ -463,11 +463,17 @@ p_blue = Particle([100, 0], 10, "green")
 p.pos = p.pos + [1, 0.25]
 ```
 
-#### Particle.rotate
+#### Particle.rotate\(\)
 
 `Particle` objects can be rotated, but it will have no noticeable affect on the object unless you are using an image as a representation of the `Particle`.
 
 `particle.rotate(angle=0, units="rad")` — Rotates the block object by a given angle value in radian units. You can also provide the units in degrees by using `"deg"`. You can also This method should only be called from the **Calculations** code editor.
+
+#### Particle.addLabel\(\)
+
+`Particle` objects can also be given a text label. This is similar to the Label object.
+
+`particle.addLabel(text="Hello", color="green")` — This adds a text label to the `Particle` object.
 
 ### Block
 
@@ -529,6 +535,12 @@ The above image also demonstrates the use of the `direction` function as well as
 
 `rocket.rotate(direction(rocket.v))`
 {% endhint %}
+
+#### Block.addLabel\(\)
+
+`Block` objects can also be given a text label. This is similar to the `Label` object.
+
+`block.addLabel(text="Hello", color="green")` — This adds a text label to the `Block` object.
 
 ### Spring
 
