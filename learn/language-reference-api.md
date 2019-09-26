@@ -463,6 +463,12 @@ p_blue = Particle([100, 0], 10, "green")
 p.pos = p.pos + [1, 0.25]
 ```
 
+#### Particle.rotate
+
+`Particle` objects can be rotated, but it will have no noticeable affect on the object unless you are using an image as a representation of the `Particle`.
+
+`particle.rotate(angle=0, units="rad")` — Rotates the block object by a given angle value in radian units. You can also provide the units in degrees by using `"deg"`. You can also This method should only be called from the **Calculations** code editor.
+
 ### Block
 
 Another particle representation in Tychos is the `Block`. A `Block` is very similar to a `Partcle` but it is represented as a colored rectangle in the World View. A block has position, width, height and color. Just as with Particle's, Tychos only uses the width and height attributes for display. You can define how these attributes change given the rules of the simulation that you define.
@@ -489,9 +495,9 @@ b1.pos = b1.pos + [1, 0.25]
 
 #### Block.rotate
 
-One big difference between the Particle class and the Block class is that Blocks can rotate. This allows you to simulate rotational behavior.
+You can also rotate a `Block` object in order to simulate rotational behavior.
 
-`block.rotate(angle=0)` — Rotates the block object by a given angle value in degrees. This method should only be called from the **Calculations** code editor.
+`block.rotate(angle=0, units="rad")` — Rotates the block object by a given angle value in radian units. Once again, if you prefer inputting the angle measurement in degrees, you can specify the units by optionally providing `"deg"` as the unit. This method should only be called from the **Calculations** code editor.
 
 ![Three different blocks rotated at different angles](../.gitbook/assets/block_rotate.png)
 
@@ -504,12 +510,12 @@ b2 = Block([0, 0], [20, 10], "blue")
 b3 = Block([20, 0], [20, 10], "orange")
 
 # Calculations editor
-b1.rotate(-45)
-b2.rotate(90)
-b3.rotate(45)
+b1.rotate(-45, "deg")
+b2.rotate(PI/2)
+b3.rotate(PI/4)
 ```
 
-Blocks can also be represented with an image by setting the image attribute of the object. The text must be a URI link to a graphic file that can be a PNG, SVG, GIF, or JPEG image.
+Just as with `Particle` objects, `Block` objects can also be represented with an image by setting the image attribute of the object. The text must be a URI link to a graphic file that can be a PNG, SVG, GIF, or JPEG image.
 
 ```text
 rocket = Block([0, 0], [10, 10], "purple")
@@ -521,17 +527,17 @@ rocket.image = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Spacecraft.p
 {% hint style="info" %}
 The above image also demonstrates the use of the `direction` function as well as the `rotate` method:
 
-`rocket.rotate(direction(rocket.v, "deg"))`
+`rocket.rotate(direction(rocket.v))`
 {% endhint %}
 
 ### Spring
 
 You can represent a spring in Tychos using the `Spring` class. A `Spring` is a visual representation of a common elastic connector that displays a given number of coils that dynamically change shape once the dimensions of the  `Spring` are changed in the **Calculations Pane**.
 
-`Spring(pos1=[0,0], pos2=[100, 0], color=default_color, coils=5, width=10, thickness=1)` -&gt; returns a Spring object
+`Spring(pos1=[0,0], pos2=[100, 0], color=default_color, coils=5, width=10, thickness=1)` -&gt; returns a `Spring` object
 
-* `pos1` — The position of one end of the Spring. If you don't specify a position, the default value of \[0,0\] is used.
-* `pos2` — The position of one other end of the Spring. If you don't specify a position, the default value of \[100,0\] is used.
+* `pos1` — The position of one end of the `Spring`. If you don't specify a position, the default value of \[0,0\] is used.
+* `pos2` — The position of one other end of the `Spring`. If you don't specify a position, the default value of \[100,0\] is used.
 * `color` — The block will be drawn in this color. Use HTML colors e.g. "\#ff3300", "blue".
 * `coils` — This is the number of coils represented.
 * `width` — This is the width of the coils.
@@ -539,7 +545,7 @@ You can represent a spring in Tychos using the `Spring` class. A `Spring` is a v
 
 ![Three different Spring objects](../.gitbook/assets/springs.png)
 
-The code below shows the three different Springs above that have different lengths, widths and coil numbers. The Particles are shown just for reference.
+The code below shows the three different `Spring` objects above that have different lengths, widths and coil numbers. The `Particle` objects are shown just for reference.
 
 ```text
 # Initial State editor
@@ -551,7 +557,37 @@ p = Particle([20, 0], 2, "green")
 spring = Spring([20, 20], [20, 0], "black", 20, 2)
 ```
 
-These attributes may also be modified after the Spring is created. In particular, one will usually change the `pos2` attribute of a Spring in the Calculations editor to show Spring's movement or deformation. 
+These attributes may also be modified after the `Spring` is created. In particular, one will usually change the `pos2` attribute of a Spring in the Calculations editor to show Spring's movement or deformation. 
+
+### Label
+
+You can add text labels to any scenario using the `Label` class. A `Label` has position, width, height and color, similar to a `Block`, but also has a text value. Just like all Tychos objects, you can define how these attributes change in the simulation.
+
+`Label(pos=[0,0], size=[10, 10], text="Hello", color=default_color)` -&gt; returns a `Label` object.
+
+* `pos` — The inital position of your block in \[X,Y\] coordinates. If you don't specify a position, the default value of \[0,0\] is used.
+* `size` — The width and height of the block that is drawn in the World View to represent the block.
+* `text` - The actual text value of the label.
+* `color` — The block will be drawn in this color. Use HTML colors e.g. "\#ff3300", "blue".
+
+These attributes may also be modified after the `Label` object is created. Here is an example of how to make several `Label` objects:
+
+![](../.gitbook/assets/label_example.png)
+
+```text
+# Initial State editor
+label1 = Label([0, 100], [50, 50], "Cat", "green")
+label2 = Label([0, 0], [150, 150], "Dog", "red")
+label3 = Label([0, -100], [50, 50], "Mouse", "blue")
+```
+
+#### Label.rotate
+
+Just as with a `Block` object or a `Particle` object, you can rotate a label as shown above:
+
+```text
+label3.rotate(PI/4)
+```
 
 ## Interface Widgets
 
