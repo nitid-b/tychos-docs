@@ -302,6 +302,82 @@ direction([4, 4])             # returns .785
 direction([4, 4], "deg")        # returns 45
 ```
 
+#### polar
+
+This function returns a two-dimensional matrix representing the cartesian components of a polar coordinate corresponding to the magnitude of the radius and the radial angle.
+
+`polar(radius, angle, units="rad")` -&gt; returns a two dimensional vector as a \[X, Y\] matrix.
+
+* `radius` - scalar quantity representing the scalar distance of the radius of the 
+* `angle` - scalar quantity representing the angle measurement of the polar coordinate.
+* `units` - optional `deg` for degree measurement or the default of `rad` for radians.
+
+Example:
+
+```text
+polar(10, 45, "deg")             # returns [7.07, 7.07]
+polar(10, PI/4)            # returns [7.07, 7.07]
+```
+
+#### stop
+
+This function actually evaluates a boolean test and then stops the simulation once the boolean test succeeds. This can be useful if you want the simulation to stop when some condition has been met within your simulation.
+
+`stop(test)` -&gt; returns a either false or true. If true is returned, the simulation stops.
+
+* `test` - a boolean statement that can be evaluated to `true` or `false`. 
+
+Example:
+
+```text
+stop(t > 10)             # simulation stops at 10 seconds
+stop(buggy.pos[X] == 100) # simulation stops when X position of particle equals 100
+```
+
+### Collision Functions
+
+{% hint style="info" %}
+The following functions currently only support collisions with **Particles**. These are meant to be used as helper functions for easily simulating collisions. We are working on adding more complex functions that work with **Blocks**, but at this time, these functions only work with **Particles.**
+{% endhint %}
+
+#### hasCollided
+
+This function returns a boolean true/false value when two `Particle` objects are given as the source and target. It returns false if the two particles are not determined to be _overlapping_, meaning that the distance between their positions is less than the sum of their radii.
+
+`hasCollided(source, target)` -&gt; returns a boolean `true` or `false`.
+
+* `source` - `Particle` object 
+* `angle` - `Particle` object
+
+Example:
+
+```text
+p1 = Particle([0, 0], 10)
+p2 = Particle([25, 0], 10)
+p3 = Particle([-15, 0], 10)
+hasCollided(p1, p2)            # returns false
+hasCollided(p1, p3)            # returns true
+```
+
+#### getIntersect
+
+This function returns a two dimensional matrix representing the minimum translation vector \(MTV\) that would be needed to separate two `Particle` objects when they overlap. This can be used to simulate collision forces based on the magnitude and direction of the MTV.
+
+`getIntersect(source, target)` -&gt; returns a two dimensional matrix.
+
+* `source` - `Particle` object 
+* `angle` - `Particle` object
+
+Example:
+
+```text
+p1 = Particle([0, 0], 10)
+p2 = Particle([25, 0], 10)
+p3 = Particle([-15, 0], 10)
+getIntersect(p1, p2)            # returns [0, 0]
+getIntersect(p1, p3)            # returns [5, 0]
+```
+
 ### Comparison Functions
 
 The following functions are used to compare two values as being equal or unequal as well as testing if one value is larger or smaller than another. These are very helpful when writing goals for students.
@@ -619,15 +695,16 @@ A `Graph` is a 2-dimensional chart of data that you specify in the Calculations 
 
 Example:
 
-![](../.gitbook/assets/graph_example.png)
+![Graph with two plots](../.gitbook/assets/tychos_graph.png)
 
 ```text
 # Initial State editor
-g = Graph("Y Velocity")
+g = Graph("X Positions vs Time")
 
 # Calculations editor
 # Graphing a particle projectile's Y velocity
-g.plot(t, particle.v[Y], "green")
+g.plot(t, particle.pos[X], "blue")
+g.plot(t, particle.pos[Y], "red")
 ```
 
 #### Graph.integrate
