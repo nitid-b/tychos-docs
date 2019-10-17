@@ -438,7 +438,7 @@ unequal(2 + 2, 3)       # true -- same as 2 + 2 != 3
 t != 10                 # returns false if t is 10, or true if it is not.
 ```
 
-Comparison operators return `true` or `false` but these also evaluate to 1 \(true\) or 0 \(false\). This can allow you to conditonally assign a value to a variable depending on the evaluation of the comparison. See the code below as an example:
+Comparison operators return `true` or `false` but these also evaluate to 1 \(true\) or 0 \(false\). This can allow you to conditionally assign a value to a variable depending on the evaluation of the comparison. See the code below as an example:
 
 ```text
 # If t is larger than 10, then the value of F is [10, 10], otherwise it is 0.
@@ -543,7 +543,7 @@ p.pos = p.pos + [1, 0.25]
 
 `Particle` objects can be rotated, but it will have no noticeable affect on the object unless you are using an image as a representation of the `Particle`.
 
-`particle.rotate(angle=0, units="rad")` — Rotates the block object by a given angle value in radian units. You can also provide the units in degrees by using `"deg"`. You can also This method should only be called from the **Calculations** code editor.
+`particle.rotate(angle=0, center_of_rotation=[0, 0])` — Rotates the `Particle` object by a given angle value in degree units. You can also provide an optional matrix that identifies the center of rotation. This method should only be called from the **Calculations** code editor.
 
 #### Particle.addLabel\(\)
 
@@ -579,7 +579,7 @@ b1.pos = b1.pos + [1, 0.25]
 
 You can also rotate a `Block` object in order to simulate rotational behavior.
 
-`block.rotate(angle=0, units="rad")` — Rotates the block object by a given angle value in radian units. Once again, if you prefer inputting the angle measurement in degrees, you can specify the units by optionally providing `"deg"` as the unit. This method should only be called from the **Calculations** code editor.
+`Block.rotate(angle=0, center_of_rotation=[0, 0])` — Rotates the `Block` object by a given angle value in degree units. You can also provide an optional matrix that identifies the center of rotation. This method should only be called from the **Calculations** code editor.
 
 ![Three different blocks rotated at different angles](../.gitbook/assets/block_rotate.png)
 
@@ -592,9 +592,9 @@ b2 = Block([0, 0], [20, 10], "blue")
 b3 = Block([20, 0], [20, 10], "orange")
 
 # Calculations editor
-b1.rotate(-45, "deg")
-b2.rotate(PI/2)
-b3.rotate(PI/4)
+b1.rotate(rad_to_deg(-PI/4))
+b2.rotate(90)
+b3.rotate(45)
 ```
 
 Just as with `Particle` objects, `Block` objects can also be represented with an image by setting the image attribute of the object. The text must be a URI link to a graphic file that can be a PNG, SVG, GIF, or JPEG image.
@@ -864,9 +864,9 @@ The `mouse` object represents your computer**'**s mouse.
 
 `mouse.is_over(object)` -&gt; `boolean` — Returns whether the mouse is positioned over an object that is either a `Particle` or a `Block`. `object` — A simulation object.
 
-## table
+## Data Output
 
-The `table` object allows you to create and display rows of data in a table format. The table is viewable in the _Data Output_ tab of the _Hack Panel_.
+You can create a representation of variable values, displayed in the **Data Output** tab, by using various API calls on the built in `table` object.
 
 #### table.setColumns
 
