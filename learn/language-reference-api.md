@@ -198,7 +198,7 @@ cross(F, r);
 
 Some other useful functions...
 
-#### **random\(min, max\)**
+**random\(min, max\)**
 
 Return a random number larger or equal to min and smaller than max using a uniform distribution. If now min or max are given, then it returns a random value from 0 to 1. If just one value is given, then it returns a random number between 0 and the input value.
 
@@ -207,6 +207,35 @@ random()       # returns a random number between 0 and 1
 random(100)    # returns a random number between 0 and 100
 random(30, 40)  # returns a random number between 30 and 40
 random([2, 3])  # returns a 2x3 matrix with random numbers between 0 and 1
+```
+
+#### string\(object\)
+
+Create a string or convert any object into a string. Elements of Arrays and Matrices are processed element wise.
+
+#### format\(value, precision\)
+
+Formats a value into a string. You have several options for how this value will be formatted:
+
+```text
+format(1/3, 3)                                     # returns '0.333'
+format(21385, 2)                                   # returns '21000'
+format(12e8, {notation: 'fixed'})                  # returns '1200000000'
+format(2.3,  {notation: 'fixed', precision: 4})    # returns '2.3000'
+```
+
+#### **concat\(A, B...**_**dim**_**\)**
+
+Concatenate two or more matrices. This function can also be used to concatenate strings together.
+
+`dim: number` is a zero-based dimension over which to concatenate the matrices. By default the last dimension of the matrices.
+
+```text
+A = [1, 2]
+B = [3, 4]
+concat(A, B)                  # returns [1, 2, 3, 4]
+math.concat(A, B, 0)           # returns [[1, 2], [3, 4]]
+math.concat('hello', ' ', 'world') # returns 'hello world'
 ```
 
 #### **drawArrow**
