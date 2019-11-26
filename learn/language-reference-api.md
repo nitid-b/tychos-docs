@@ -276,7 +276,9 @@ The `drawLine` function draws a line and is commonly used to illustrate some con
 Example — The illustration above was drawn using this command:
 
 ```text
-# Calculations editordrawLine([0, 0], [20, 20], "purple", 2)  # a linedrawLine([0, 0], [10, 20], "green", 10)  # another line
+# Calculations editor
+drawLine([0, 0], [20, 20], "purple", 2)  # a line
+drawLine([0, 0], [10, 20], "green", 10)  # another line
 ```
 
 #### **unit\_vector**
@@ -290,7 +292,8 @@ This function returns a unit vector representation of the given input vector. It
 Example:
 
 ```text
-u = unit_vector([3, 4])  # returns [0.6, 0.8]magnitude(u)             # returns 1
+u = unit_vector([3, 4])  # returns [0.6, 0.8]
+magnitude(u)             # returns 1
 ```
 
 #### **magnitude**
@@ -319,7 +322,8 @@ This function returns a scalar angle measurement. This is helpful when you want 
 Example:
 
 ```text
-direction([4, 4])             # returns .785direction([4, 4], "deg")        # returns 45
+direction([4, 4])             # returns .785
+direction([4, 4], "deg")        # returns 45
 ```
 
 #### polar
@@ -335,7 +339,8 @@ This function returns a two-dimensional matrix representing the cartesian compon
 Example:
 
 ```text
-polar(10, 45, "deg")             # returns [7.07, 7.07]polar(10, PI/4)            # returns [7.07, 7.07]
+polar(10, 45, "deg")         # returns [7.07, 7.07]
+polar(10, PI/4)            # returns [7.07, 7.07]
 ```
 
 #### stop
@@ -349,7 +354,8 @@ This function actually evaluates a boolean test and then stops the simulation on
 Example:
 
 ```text
-stop(t > 10)             # simulation stops at 10 secondsstop(buggy.pos[X] == 100) # simulation stops when X position of particle equals 100
+stop(t > 10)             # simulation stops at 10 seconds
+stop(buggy.pos[X] == 100) # simulation stops when X position of particle equals 100
 ```
 
 ### Collision Functions
@@ -370,7 +376,11 @@ This function returns a boolean true/false value when two `Particle` objects are
 Example:
 
 ```text
-p1 = Particle([0, 0], 10)p2 = Particle([25, 0], 10)p3 = Particle([-15, 0], 10)hasCollided(p1, p2)            # returns falsehasCollided(p1, p3)            # returns true
+p1 = Particle([0, 0], 10)
+p2 = Particle([25, 0], 10)
+p3 = Particle([-15, 0], 10)
+hasCollided(p1, p2)            # returns false
+hasCollided(p1, p3)            # returns true
 ```
 
 #### getIntersect
@@ -385,7 +395,11 @@ This function returns a two dimensional matrix representing the minimum translat
 Example:
 
 ```text
-p1 = Particle([0, 0], 10)p2 = Particle([25, 0], 10)p3 = Particle([-15, 0], 10)getIntersect(p1, p2)            # returns [0, 0]getIntersect(p1, p3)            # returns [5, 0]
+p1 = Particle([0, 0], 10)
+p2 = Particle([25, 0], 10)
+p3 = Particle([-15, 0], 10)
+getIntersect(p1, p2)            # returns [0, 0]
+getIntersect(p1, p3)            # returns [5, 0]
 ```
 
 ### Comparison Functions
@@ -397,7 +411,10 @@ The following functions are used to compare two values as being equal or unequal
 The function tests if two values \(x and y\) are equal. It returns a boolean value of `true` or `false`.
 
 ```text
-2 + 2 == 3             # returns false2 + 2 == 4             # returns truet == 10                # returns true if t is 10, or false if it is not.equal(2 + 2, 4)        # same as 2 + 2 == 4
+2 + 2 == 3             # returns false
+2 + 2 == 4             # returns true
+t == 10                # returns true if t is 10, or false if it is not.
+equal(2 + 2, 4)        # same as 2 + 2 == 4
 ```
 
 #### **deepEqual\(a, b\)**
@@ -405,7 +422,10 @@ The function tests if two values \(x and y\) are equal. It returns a boolean val
 This function is similar to `equal`, but it tests element wise whether two matrices are equal. It returns a boolean value of `true` or `false`. The code below demonstrates the difference between `equal` and `deepEqual`:
 
 ```text
-p1 = Particle([10, 10])p2 = Particle([10, 0])deepEqual(p1.pos, p2.pos)   # returns falseequal(p1.pos, p2.pos)       # returns [true, false]
+p1 = Particle([10, 10])
+p2 = Particle([10, 0])
+deepEqual(p1.pos, p2.pos)   # returns false
+equal(p1.pos, p2.pos)       # returns [true, false]
 ```
 
 #### `larger(a, b)` or `a > b`
