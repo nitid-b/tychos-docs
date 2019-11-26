@@ -622,9 +622,19 @@ Tychos also provides several widgets for displaying data in different ways as we
 
 A `Graph` is a 2-dimensional chart of data that you specify in the Calculations editor. Each Graph that is created will appear on the right side of the World View. Your program needs to add points to the graph with the `plot`command.
 
-`Graph(title="")` -&gt; Returns a Graph
+`Graph(title="Untitled", y_axis="Y", x_axis="X")` -&gt; Returns a Graph
 
 * `title` = Optional text that will appear at the top of the graph.
+* `y_axis` = Optional text that will appear on the left side of the graph as the vertical axis label.
+* `x_axis` = Optional text that will appear at the bottom of the graph as the horizontal axis label.
+
+```text
+graph_x_t = Graph("X Position vs Time", "X Position", "Time")
+graph_vx_t = Graph("$v_x$", "Velocity", "Time")
+graph_ax_t = Graph("$a_x", "Acceleration", "Time")
+```
+
+![Examples of three graphs.](../.gitbook/assets/screen-shot-2019-11-25-at-9.15.07-pm.png)
 
 #### **Graph.plot**
 
