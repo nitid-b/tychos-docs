@@ -17,10 +17,8 @@ To define a variable in Tychos all you need to do is identify a name for the var
 ```text
 # Assigns a variable called x the value of 10
 x = 10
-
 # Assign a new variable y the value of the x
 y = x
-
 # Assign x the value of itself plus 1
 x = x + 1
 ```
@@ -53,13 +51,13 @@ Tychos uses the following operators to perform basic math calculations:
 
 You can also use the following basic math functions:
 
-#### **base ^ power**
+#### **pow\(base, power\)**
 
 The `pow(base, power)` function takes two arguments, raising the `base` by the `power`.
 
 ```text
 # returns number 8
-2 ^ 3
+pow(2,3)
 ```
 
 #### **sqrt\(positive\_number\)**
@@ -90,7 +88,7 @@ The `sin(angle)` function is used to evaluate the trigonometric sine value for a
 
 ```text
 # returns number 1
-sin(pi/2)
+sin(PI/2)
 ```
 
 #### **cos\(angle\)**
@@ -108,7 +106,7 @@ The `tan(angle)` function is used to evaluate the trigonometric tangent value fo
 
 ```text
 # returns number 1
-tan(pi/4)
+tan(PI/4)
 ```
 
 #### **asin\(value\)**
@@ -136,7 +134,6 @@ The `atan2(value)` function is used to evaluate the trigonometric arctangent val
 ```text
 # returns number -0.785
 atan2(-1, 1)
-
 # returns 2.36
 atan2(1, -1)
 ```
@@ -156,7 +153,7 @@ The `rad_to_deg(angle)` function is not part of the MathNotepad language but is 
 
 ```text
 # returns number 180
-rad_to_deg(p1)
+rad_to_deg(PI)
 ```
 
 ### Matrix Functions
@@ -173,7 +170,6 @@ Calculates the dot product of two vectors. The dot product of `x = [a1, a2, a3, 
 # Work is the dot product of Force (F) and displacement (r)
 F = [2, 2]
 r = [3, 3]
-
 # returns 12
 Work = dot(F, r)
 ```
@@ -191,7 +187,7 @@ If one of the input vectors has a dimension greater than 1, the output vector wi
 F = [2, 0, 0]
 r = [0, 2, 0]
 # returns matrix [0, 0, 4]
-cross(F, r);
+cross(F, r)
 ```
 
 ## Other Useful Functions
@@ -203,10 +199,14 @@ Some other useful functions...
 Return a random number larger or equal to min and smaller than max using a uniform distribution. If now min or max are given, then it returns a random value from 0 to 1. If just one value is given, then it returns a random number between 0 and the input value.
 
 ```text
-random()       # returns a random number between 0 and 1
-random(100)    # returns a random number between 0 and 100
-random(30, 40)  # returns a random number between 30 and 40
-random([2, 3])  # returns a 2x3 matrix with random numbers between 0 and 1
+# returns a random number between 0 and 1
+random()
+# returns a random number between 0 and 100
+random(100)
+# returns a random number between 30 and 40
+random(30, 40)
+# returns a 2x3 matrix with random numbers between 0 and 1
+random([2, 3])
 ```
 
 #### string\(object\)
@@ -218,10 +218,14 @@ Create a string or convert any object into a string. Elements of Arrays and Matr
 Formats a value into a string. You have several options for how this value will be formatted:
 
 ```text
-format(1/3, 3)                                     # returns '0.333'
-format(21385, 2)                                   # returns '21000'
-format(12e8, {notation: 'fixed'})                  # returns '1200000000'
-format(2.3,  {notation: 'fixed', precision: 4})    # returns '2.3000'
+# returns '0.333'
+format(1/3, 3)
+# returns '21000'
+format(21385, 2)
+# returns '1200000000'
+format(12e8, {notation: 'fixed'})
+# returns '2.3000'
+format(2.3,  {notation: 'fixed', precision: 4})                
 ```
 
 #### **concat\(A, B...**_**dim**_**\)**
@@ -231,11 +235,7 @@ Concatenate two or more matrices. This function can also be used to concatenate 
 `dim: number` is a zero-based dimension over which to concatenate the matrices. By default the last dimension of the matrices.
 
 ```text
-A = [1, 2]
-B = [3, 4]
-concat(A, B)                  # returns [1, 2, 3, 4]
-math.concat(A, B, 0)           # returns [[1, 2], [3, 4]]
-math.concat('hello', ' ', 'world') # returns 'hello world'
+A = [1, 2]B = [3, 4]concat(A, B)                  # returns [1, 2, 3, 4]math.concat(A, B, 0)           # returns [[1, 2], [3, 4]]math.concat('hello', ' ', 'world') # returns 'hello world'
 ```
 
 #### **drawArrow**
@@ -257,12 +257,7 @@ The `drawArrow` function draws an arrow and is commonly used to illustrate vecto
 Example — The illustrations above were drawn using these commands:
 
 ```text
-# Initial State editor
-p = Particle([0,0], 10, "green")
-
-# Calculations editor
-drawArrow(p.pos, [20, 20], "purple")        # just the diagonal arrow
-drawArrow(p.pos, [20, 20], "purple", true)  # also draw X and Y components
+# Initial State editorp = Particle([0,0], 10, "green")# Calculations editordrawArrow(p.pos, [20, 20], "purple")        # just the diagonal arrowdrawArrow(p.pos, [20, 20], "purple", true)  # also draw X and Y components
 ```
 
 #### **drawLine**
@@ -281,9 +276,7 @@ The `drawLine` function draws a line and is commonly used to illustrate some con
 Example — The illustration above was drawn using this command:
 
 ```text
-# Calculations editor
-drawLine([0, 0], [20, 20], "purple", 2)  # a line
-drawLine([0, 0], [10, 20], "green", 10)  # another line
+# Calculations editordrawLine([0, 0], [20, 20], "purple", 2)  # a linedrawLine([0, 0], [10, 20], "green", 10)  # another line
 ```
 
 #### **unit\_vector**
@@ -297,8 +290,7 @@ This function returns a unit vector representation of the given input vector. It
 Example:
 
 ```text
-u = unit_vector([3, 4])  # returns [0.6, 0.8]
-magnitude(u)             # returns 1
+u = unit_vector([3, 4])  # returns [0.6, 0.8]magnitude(u)             # returns 1
 ```
 
 #### **magnitude**
@@ -327,8 +319,7 @@ This function returns a scalar angle measurement. This is helpful when you want 
 Example:
 
 ```text
-direction([4, 4])             # returns .785
-direction([4, 4], "deg")        # returns 45
+direction([4, 4])             # returns .785direction([4, 4], "deg")        # returns 45
 ```
 
 #### polar
@@ -344,8 +335,7 @@ This function returns a two-dimensional matrix representing the cartesian compon
 Example:
 
 ```text
-polar(10, 45, "deg")             # returns [7.07, 7.07]
-polar(10, PI/4)            # returns [7.07, 7.07]
+polar(10, 45, "deg")             # returns [7.07, 7.07]polar(10, PI/4)            # returns [7.07, 7.07]
 ```
 
 #### stop
@@ -359,8 +349,7 @@ This function actually evaluates a boolean test and then stops the simulation on
 Example:
 
 ```text
-stop(t > 10)             # simulation stops at 10 seconds
-stop(buggy.pos[X] == 100) # simulation stops when X position of particle equals 100
+stop(t > 10)             # simulation stops at 10 secondsstop(buggy.pos[X] == 100) # simulation stops when X position of particle equals 100
 ```
 
 ### Collision Functions
@@ -381,11 +370,7 @@ This function returns a boolean true/false value when two `Particle` objects are
 Example:
 
 ```text
-p1 = Particle([0, 0], 10)
-p2 = Particle([25, 0], 10)
-p3 = Particle([-15, 0], 10)
-hasCollided(p1, p2)            # returns false
-hasCollided(p1, p3)            # returns true
+p1 = Particle([0, 0], 10)p2 = Particle([25, 0], 10)p3 = Particle([-15, 0], 10)hasCollided(p1, p2)            # returns falsehasCollided(p1, p3)            # returns true
 ```
 
 #### getIntersect
@@ -400,11 +385,7 @@ This function returns a two dimensional matrix representing the minimum translat
 Example:
 
 ```text
-p1 = Particle([0, 0], 10)
-p2 = Particle([25, 0], 10)
-p3 = Particle([-15, 0], 10)
-getIntersect(p1, p2)            # returns [0, 0]
-getIntersect(p1, p3)            # returns [5, 0]
+p1 = Particle([0, 0], 10)p2 = Particle([25, 0], 10)p3 = Particle([-15, 0], 10)getIntersect(p1, p2)            # returns [0, 0]getIntersect(p1, p3)            # returns [5, 0]
 ```
 
 ### Comparison Functions
@@ -416,10 +397,7 @@ The following functions are used to compare two values as being equal or unequal
 The function tests if two values \(x and y\) are equal. It returns a boolean value of `true` or `false`.
 
 ```text
-2 + 2 == 3             # returns false
-2 + 2 == 4             # returns true
-t == 10                # returns true if t is 10, or false if it is not.
-equal(2 + 2, 4)        # same as 2 + 2 == 4
+2 + 2 == 3             # returns false2 + 2 == 4             # returns truet == 10                # returns true if t is 10, or false if it is not.equal(2 + 2, 4)        # same as 2 + 2 == 4
 ```
 
 #### **deepEqual\(a, b\)**
@@ -427,11 +405,7 @@ equal(2 + 2, 4)        # same as 2 + 2 == 4
 This function is similar to `equal`, but it tests element wise whether two matrices are equal. It returns a boolean value of `true` or `false`. The code below demonstrates the difference between `equal` and `deepEqual`:
 
 ```text
-p1 = Particle([10, 10])
-p2 = Particle([10, 0])
-
-deepEqual(p1.pos, p2.pos)   # returns false
-equal(p1.pos, p2.pos)       # returns [true, false]
+p1 = Particle([10, 10])p2 = Particle([10, 0])deepEqual(p1.pos, p2.pos)   # returns falseequal(p1.pos, p2.pos)       # returns [true, false]
 ```
 
 #### `larger(a, b)` or `a > b`
@@ -439,10 +413,7 @@ equal(p1.pos, p2.pos)       # returns [true, false]
 The function tests if one value \(a\) is larger than another \(b\). It returns a boolean value of `true` or `false`.
 
 ```text
-2 > 3               # returns false
-3 > 2               # returns true
-2 > 2               # returns false
-larger(2, 2)        # same as 2 > 2
+2 > 3               # returns false3 > 2               # returns true2 > 2               # returns falselarger(2, 2)        # same as 2 > 2
 ```
 
 #### `smaller(a, b)` or `a < b`
@@ -450,10 +421,7 @@ larger(2, 2)        # same as 2 > 2
 The function tests if one value \(a\) is smaller than another \(b\). It returns a boolean value of `true` or `false`.
 
 ```text
-2 < 3                # returns true
-3 < 2                # returns false
-2 < 2                # returns false
-smaller(2, 2)        # returns false
+2 < 3                # returns true3 < 2                # returns false2 < 2                # returns falsesmaller(2, 2)        # returns false
 ```
 
 #### `unequal(a, b)` or `a != b`
@@ -461,17 +429,13 @@ smaller(2, 2)        # returns false
 The function tests if two values \(a and b\) are unequal. It returns a boolean value of `true` or `false`.
 
 ```text
-2 + 2 != 3              # returns true
-unequal(2 + 2, 3)       # true -- same as 2 + 2 != 3
-2 + 2 != 4              # returns false
-t != 10                 # returns false if t is 10, or true if it is not.
+2 + 2 != 3              # returns trueunequal(2 + 2, 3)       # true -- same as 2 + 2 != 32 + 2 != 4              # returns falset != 10                 # returns false if t is 10, or true if it is not.
 ```
 
 Comparison operators return `true` or `false` but these also evaluate to 1 \(true\) or 0 \(false\). This can allow you to conditionally assign a value to a variable depending on the evaluation of the comparison. See the code below as an example:
 
 ```text
-# If t is larger than 10, then the value of F is [10, 10], otherwise it is 0.
-F = (t > 10) * [10, 10]
+# If t is larger than 10, then the value of F is [10, 10], otherwise it is 0.F = (t > 10) * [10, 10]
 ```
 
 #### `if(test, true_result, false_result)`
@@ -479,12 +443,7 @@ F = (t > 10) * [10, 10]
 The `if()` function returns `true_result` or `false_result` depending on `test`.
 
 ```text
-if(true, 3, 44)                 # returns 3
-if(false, 3, 44)                # returns 44
-if(1 > 2, 3, 44)                # test is false; therefore returns 44
-a = 1
-b = 1
-if(a == b, "YAY", "darn")       # test is true; therefore returns "YAY"
+if(true, 3, 44)                 # returns 3if(false, 3, 44)                # returns 44if(1 > 2, 3, 44)                # test is false; therefore returns 44a = 1b = 1if(a == b, "YAY", "darn")       # test is true; therefore returns "YAY"
 ```
 
 ### Logical Operators
@@ -496,23 +455,13 @@ The following operators are used to execute logical AND and OR comparisons for t
 This is used for performing a logical AND conjunction. For example, "A and B" is true only if A is true and B is true. "A and B" is false if either A or B is false.
 
 ```text
-A = true
-B = true
-
-A and B # returns true
-
-B = false
-
-A and B # returns false
+A = trueB = trueA and B # returns trueB = falseA and B # returns false
 ```
 
 You can use the `and` operator to test if two comparisons are both true:
 
 ```text
-x = 2
-
-(x < 3) and (x == 2)  # returns true
-(x < 3) and (x != 2)  # returns false
+x = 2(x < 3) and (x == 2)  # returns true(x < 3) and (x != 2)  # returns false
 ```
 
 #### **or**
@@ -520,23 +469,13 @@ x = 2
 This is used for performing a logical OR conjunction. For example, "A or B" is true if A or B is true. "A or B" is false only if A and B are both false.
 
 ```text
-A = true
-B = false
-
-A or B # returns true
-
-A = false
-
-A or B # returns false
+A = trueB = falseA or B # returns trueA = falseA or B # returns false
 ```
 
 You can use the `or` operator to test if one of two comparisons are true:
 
 ```text
-x = 2
-
-smaller(x, 3) or equal(x, 3)    # one is true, so returns true
-(x < 1) or (x == 3)             # both are false, so returns false
+x = 2smaller(x, 3) or equal(x, 3)    # one is true, so returns true(x < 1) or (x == 3)             # both are false, so returns false
 ```
 
 ## Built-in Classes
@@ -558,14 +497,7 @@ A `Particle` represents a spherical particle in the simulated world and is drawn
 These attributes may also be modified on the particle after it is created. In particular, one will usually change the `pos` attribute of a particle in the Calculations editor to show a particle's movement. E.g.
 
 ```text
-# Initial State editor
-p = Particle()
-p_big = Particle([50, 0], 25)
-p_big.color = "red"
-p_blue = Particle([100, 0], 10, "green")
-
-# Calculations editor
-p.pos = p.pos + [1, 0.25]
+# Initial State editorp = Particle()p_big = Particle([50, 0], 25)p_big.color = "red"p_blue = Particle([100, 0], 10, "green")# Calculations editorp.pos = p.pos + [1, 0.25]
 ```
 
 #### Particle.rotate\(\)
@@ -595,13 +527,7 @@ Another particle representation in Tychos is the `Block`. A `Block` is very simi
 These attributes may also be modified on the block after it is created. In particular, one will usually change the `pos` attribute of a block in the Calculations editor to show a block's movement. E.g.
 
 ```text
-# Initial State editor
-b1 = Block([0, 0], [10, 10], "green")
-b2 = Block([20, 0], [10, 20], "blue")
-b3 = Block([40, 0], [20, 10], "orange")
-
-# Calculations editor
-b1.pos = b1.pos + [1, 0.25]
+# Initial State editorb1 = Block([0, 0], [10, 10], "green")b2 = Block([20, 0], [10, 20], "blue")b3 = Block([40, 0], [20, 10], "orange")# Calculations editorb1.pos = b1.pos + [1, 0.25]
 ```
 
 #### Block.rotate
@@ -615,22 +541,13 @@ You can also rotate a `Block` object in order to simulate rotational behavior.
 Example:
 
 ```text
-# Initial State editor
-b1 = Block([-20, 0], [20, 10], "green")
-b2 = Block([0, 0], [20, 10], "blue")
-b3 = Block([20, 0], [20, 10], "orange")
-
-# Calculations editor
-b1.rotate(rad_to_deg(-PI/4))
-b2.rotate(90)
-b3.rotate(45)
+# Initial State editorb1 = Block([-20, 0], [20, 10], "green")b2 = Block([0, 0], [20, 10], "blue")b3 = Block([20, 0], [20, 10], "orange")# Calculations editorb1.rotate(rad_to_deg(-PI/4))b2.rotate(90)b3.rotate(45)
 ```
 
 Just as with `Particle` objects, `Block` objects can also be represented with an image by setting the image attribute of the object. The text must be a URI link to a graphic file that can be a PNG, SVG, GIF, or JPEG image.
 
 ```text
-rocket = Block([0, 0], [10, 10], "purple")
-rocket.image = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Spacecraft.png"
+rocket = Block([0, 0], [10, 10], "purple")rocket.image = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Spacecraft.png"
 ```
 
 ![A Block that looks like a rocket.](../.gitbook/assets/direction.png)
@@ -665,13 +582,7 @@ You can represent a spring in Tychos using the `Spring` class. A `Spring` is a v
 The code below shows the three different `Spring` objects above that have different lengths, widths and coil numbers. The `Particle` objects are shown just for reference.
 
 ```text
-# Initial State editor
-p = Particle([0, 0], 2, "green")
-spring = Spring([0, 20], [0, 0], "black", 20, 2)
-p = Particle([10, 0], 2, "green")
-spring = Spring([10, 20], [10, 0], "black", 10, 4)
-p = Particle([20, 0], 2, "green")
-spring = Spring([20, 20], [20, 0], "black", 20, 2)
+# Initial State editorp = Particle([0, 0], 2, "green")spring = Spring([0, 20], [0, 0], "black", 20, 2)p = Particle([10, 0], 2, "green")spring = Spring([10, 20], [10, 0], "black", 10, 4)p = Particle([20, 0], 2, "green")spring = Spring([20, 20], [20, 0], "black", 20, 2)
 ```
 
 These attributes may also be modified after the `Spring` is created. In particular, one will usually change the `pos2` attribute of a Spring in the Calculations editor to show Spring's movement or deformation. 
@@ -692,10 +603,7 @@ These attributes may also be modified after the `Label` object is created. Here 
 ![](../.gitbook/assets/label_example.png)
 
 ```text
-# Initial State editor
-label1 = Label([0, 100], [50, 50], "Cat", "green")
-label2 = Label([0, 0], [150, 150], "Dog", "red")
-label3 = Label([0, -100], [50, 50], "Mouse", "blue")
+# Initial State editorlabel1 = Label([0, 100], [50, 50], "Cat", "green")label2 = Label([0, 0], [150, 150], "Dog", "red")label3 = Label([0, -100], [50, 50], "Mouse", "blue")
 ```
 
 #### Label.rotate
@@ -727,13 +635,7 @@ Example:
 ![Graph with two plots](../.gitbook/assets/tychos_graph.png)
 
 ```text
-# Initial State editor
-g = Graph("X Positions vs Time")
-
-# Calculations editor
-# Graphing a particle projectile's Y velocity
-g.plot(t, particle.pos[X], "blue")
-g.plot(t, particle.pos[Y], "red")
+# Initial State editorg = Graph("X Positions vs Time")# Calculations editor# Graphing a particle projectile's Y velocityg.plot(t, particle.pos[X], "blue")g.plot(t, particle.pos[Y], "red")
 ```
 
 #### Graph.integrate
@@ -745,13 +647,7 @@ Example:
 ![](../.gitbook/assets/integrate_example.png)
 
 ```text
-# Initial State editor
-g = Graph("Y Velocity")
-
-# Calculations editor
-# Graphing a particle projectile's Y velocity
-g.plot(t, particle.v[Y], "green")
-g.integrate("green")
+# Initial State editorg = Graph("Y Velocity")# Calculations editor# Graphing a particle projectile's Y velocityg.plot(t, particle.v[Y], "green")g.integrate("green")
 ```
 
 ### Meter
@@ -774,11 +670,7 @@ A `Meter` is a numeric display of data that you specify in the Calculations edit
 Example:
 
 ```text
-# Initial State editor
-mt = Meter("Time")
-
-# Calculations editor
-mt.display(t, "s")
+# Initial State editormt = Meter("Time")# Calculations editormt.display(t, "s")
 ```
 
 ### Gauge
@@ -800,16 +692,7 @@ A `Gauge` is an analog display of data that is very similar to a `Meter` that yo
 Example:
 
 ```text
-# Initial State editor
-g1 = Gauge("Value 1", 200, 0, "orange")
-g2 = Gauge("Value 2", 100, -100, "purple")
-g3 = Gauge("Value 3", 100, 0, "blue")
-
-# Calculations editor
-val = 44
-g1.display(val)
-g2.display(val)
-g3.display(val)
+# Initial State editorg1 = Gauge("Value 1", 200, 0, "orange")g2 = Gauge("Value 2", 100, -100, "purple")g3 = Gauge("Value 3", 100, 0, "blue")# Calculations editorval = 44g1.display(val)g2.display(val)g3.display(val)
 ```
 
 ## Interactivity
@@ -831,11 +714,7 @@ A `Toggle` is an interactive widget that allows you associate a boolean value \(
 Example:
 
 ```text
-# Initial State editor
-t1 = Toggle("My Toggle")
-
-# Calculations editor
-isActive = t1.value
+# Initial State editort1 = Toggle("My Toggle")# Calculations editorisActive = t1.value
 ```
 
 ### Slider
@@ -858,11 +737,7 @@ A `Slider` is an interactive widget that allows you to link a value in your scen
 Example:
 
 ```text
-# Initial State editor
-s1 = Slider("I'm A Slider", 0, 100, 2)
-
-# Calculations editor
-x = s1.value
+# Initial State editors1 = Slider("I'm A Slider", 0, 100, 2)# Calculations editorx = s1.value
 ```
 
 ### keyboard
@@ -908,13 +783,7 @@ You can create a representation of variable values, displayed in the **Data Outp
 Example:
 
 ```text
-# Initial State editor
-table.setColumns(["time", "x value", "y value"])
-
-# Calculations editor
-x = t * 2
-y = t / 2
-table.addRow([t, x, y])
+# Initial State editortable.setColumns(["time", "x value", "y value"])# Calculations editorx = t * 2y = t / 2table.addRow([t, x, y])
 ```
 
 The code above would generate this table:
