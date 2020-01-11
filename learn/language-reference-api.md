@@ -1,4 +1,4 @@
-# Tychos Language Reference
+# Tychos API - Language Reference
 
 The following reference guide identifies the language syntax, built in variables, functions, and classes that are used to code your simulations in Tychos. Tychos uses the [MathNotepad language](http://mathnotepad.com/docs/functions.html). We have included documentation here for some of the helpful functions defined in the MathNotepad language. This is not a complete list of all functions available in MathNotepad, just ones that might be commonly used in Tychos for building scenarios as well as defining goals for those scenarios.
 
@@ -433,7 +433,10 @@ equal(p1.pos, p2.pos)       # returns [true, false]
 The function tests if one value \(a\) is larger than another \(b\). It returns a boolean value of `true` or `false`.
 
 ```text
-2 > 3               # returns false3 > 2               # returns true2 > 2               # returns falselarger(2, 2)        # same as 2 > 2
+2 > 3               # returns false
+3 > 2               # returns true
+2 > 2               # returns false
+larger(2, 2)        # same as 2 > 2
 ```
 
 #### `smaller(a, b)` or `a < b`
@@ -441,7 +444,10 @@ The function tests if one value \(a\) is larger than another \(b\). It returns a
 The function tests if one value \(a\) is smaller than another \(b\). It returns a boolean value of `true` or `false`.
 
 ```text
-2 < 3                # returns true3 < 2                # returns false2 < 2                # returns falsesmaller(2, 2)        # returns false
+2 < 3                # returns true
+3 < 2                # returns false
+2 < 2                # returns false
+smaller(2, 2)        # returns false
 ```
 
 #### `unequal(a, b)` or `a != b`
@@ -449,13 +455,17 @@ The function tests if one value \(a\) is smaller than another \(b\). It returns 
 The function tests if two values \(a and b\) are unequal. It returns a boolean value of `true` or `false`.
 
 ```text
-2 + 2 != 3              # returns trueunequal(2 + 2, 3)       # true -- same as 2 + 2 != 32 + 2 != 4              # returns falset != 10                 # returns false if t is 10, or true if it is not.
+2 + 2 != 3              # returns true
+unequal(2 + 2, 3)       # true -- same as 2 + 2 != 3
+2 + 2 != 4              # returns false
+t != 10                 # returns false if t is 10, or true if it is not.
 ```
 
 Comparison operators return `true` or `false` but these also evaluate to 1 \(true\) or 0 \(false\). This can allow you to conditionally assign a value to a variable depending on the evaluation of the comparison. See the code below as an example:
 
 ```text
-# If t is larger than 10, then the value of F is [10, 10], otherwise it is 0.F = (t > 10) * [10, 10]
+# If t is larger than 10, then the value of F is [10, 10], otherwise it is 0.
+F = (t > 10) * [10, 10]
 ```
 
 #### `if(test, true_result, false_result)`
@@ -463,7 +473,12 @@ Comparison operators return `true` or `false` but these also evaluate to 1 \(tru
 The `if()` function returns `true_result` or `false_result` depending on `test`.
 
 ```text
-if(true, 3, 44)                 # returns 3if(false, 3, 44)                # returns 44if(1 > 2, 3, 44)                # test is false; therefore returns 44a = 1b = 1if(a == b, "YAY", "darn")       # test is true; therefore returns "YAY"
+if(true, 3, 44)                 # returns 3
+if(false, 3, 44)                # returns 44
+if(1 > 2, 3, 44)                # test is false; therefore returns 44
+a = 1
+b = 1
+if(a == b, "YAY", "darn")       # test is true; therefore returns "YAY"
 ```
 
 ### Logical Operators
@@ -475,13 +490,19 @@ The following operators are used to execute logical AND and OR comparisons for t
 This is used for performing a logical AND conjunction. For example, "A and B" is true only if A is true and B is true. "A and B" is false if either A or B is false.
 
 ```text
-A = trueB = trueA and B # returns trueB = falseA and B # returns false
+A = true
+B = true
+A and B         # returns true
+B = false
+A and B         # returns false
 ```
 
 You can use the `and` operator to test if two comparisons are both true:
 
 ```text
-x = 2(x < 3) and (x == 2)  # returns true(x < 3) and (x != 2)  # returns false
+x = 2
+(x < 3) and (x == 2)  # returns true
+(x < 3) and (x != 2)  # returns false
 ```
 
 #### **or**
@@ -489,13 +510,19 @@ x = 2(x < 3) and (x == 2)  # returns true(x < 3) and (x != 2)  # returns false
 This is used for performing a logical OR conjunction. For example, "A or B" is true if A or B is true. "A or B" is false only if A and B are both false.
 
 ```text
-A = trueB = falseA or B # returns trueA = falseA or B # returns false
+A = true
+B = false
+A or B # returns true
+A = false
+A or B # returns false
 ```
 
 You can use the `or` operator to test if one of two comparisons are true:
 
 ```text
-x = 2smaller(x, 3) or equal(x, 3)    # one is true, so returns true(x < 1) or (x == 3)             # both are false, so returns false
+x = 2
+smaller(x, 3) or equal(x, 3)    # one is true, so returns true
+(x < 1) or (x == 3)             # both are false, so returns false
 ```
 
 ## Built-in Classes
@@ -517,7 +544,14 @@ A `Particle` represents a spherical particle in the simulated world and is drawn
 These attributes may also be modified on the particle after it is created. In particular, one will usually change the `pos` attribute of a particle in the Calculations editor to show a particle's movement. E.g.
 
 ```text
-# Initial State editorp = Particle()p_big = Particle([50, 0], 25)p_big.color = "red"p_blue = Particle([100, 0], 10, "green")# Calculations editorp.pos = p.pos + [1, 0.25]
+# Initial State editor
+p = Particle()
+p_big = Particle([50, 0], 25)
+p_big.color = "red"
+p_green = Particle([100, 0], 10, "green")
+
+# Calculations editor
+p.pos = p.pos + [1, 0.25]
 ```
 
 #### Particle.rotate\(\)
@@ -547,7 +581,13 @@ Another particle representation in Tychos is the `Block`. A `Block` is very simi
 These attributes may also be modified on the block after it is created. In particular, one will usually change the `pos` attribute of a block in the Calculations editor to show a block's movement. E.g.
 
 ```text
-# Initial State editorb1 = Block([0, 0], [10, 10], "green")b2 = Block([20, 0], [10, 20], "blue")b3 = Block([40, 0], [20, 10], "orange")# Calculations editorb1.pos = b1.pos + [1, 0.25]
+# Initial State editor
+b1 = Block([0, 0], [10, 10], "green")
+b2 = Block([20, 0], [10, 20], "blue")
+b3 = Block([40, 0], [20, 10], "orange")
+
+# Calculations editor
+b1.pos = b1.pos + [1, 0.25]
 ```
 
 #### Block.rotate
@@ -561,13 +601,22 @@ You can also rotate a `Block` object in order to simulate rotational behavior.
 Example:
 
 ```text
-# Initial State editorb1 = Block([-20, 0], [20, 10], "green")b2 = Block([0, 0], [20, 10], "blue")b3 = Block([20, 0], [20, 10], "orange")# Calculations editorb1.rotate(rad_to_deg(-PI/4))b2.rotate(90)b3.rotate(45)
+# Initial State editor
+b1 = Block([-20, 0], [20, 10], "green")
+b2 = Block([0, 0], [20, 10], "blue")
+b3 = Block([20, 0], [20, 10], "orange")
+
+# Calculations editor
+b1.rotate(rad_to_deg(-PI/4))
+b2.rotate(90)
+b3.rotate(45)
 ```
 
 Just as with `Particle` objects, `Block` objects can also be represented with an image by setting the image attribute of the object. The text must be a URI link to a graphic file that can be a PNG, SVG, GIF, or JPEG image.
 
 ```text
-rocket = Block([0, 0], [10, 10], "purple")rocket.image = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Spacecraft.png"
+rocket = Block([0, 0], [10, 10], "purple")
+rocket.image = "https://upload.wikimedia.org/wikipedia/commons/3/3d/Spacecraft.png"
 ```
 
 ![A Block that looks like a rocket.](../.gitbook/assets/direction.png)
@@ -602,7 +651,13 @@ You can represent a spring in Tychos using the `Spring` class. A `Spring` is a v
 The code below shows the three different `Spring` objects above that have different lengths, widths and coil numbers. The `Particle` objects are shown just for reference.
 
 ```text
-# Initial State editorp = Particle([0, 0], 2, "green")spring = Spring([0, 20], [0, 0], "black", 20, 2)p = Particle([10, 0], 2, "green")spring = Spring([10, 20], [10, 0], "black", 10, 4)p = Particle([20, 0], 2, "green")spring = Spring([20, 20], [20, 0], "black", 20, 2)
+# Initial State editor
+p = Particle([0, 0], 2, "green")
+spring = Spring([0, 20], [0, 0], "black", 20, 2)
+p = Particle([10, 0], 2, "green")
+spring = Spring([10, 20], [10, 0], "black", 10, 4)
+p = Particle([20, 0], 2, "green")
+spring = Spring([20, 20], [20, 0], "black", 20, 2)
 ```
 
 These attributes may also be modified after the `Spring` is created. In particular, one will usually change the `pos2` attribute of a Spring in the Calculations editor to show Spring's movement or deformation. 
@@ -623,7 +678,10 @@ These attributes may also be modified after the `Label` object is created. Here 
 ![](../.gitbook/assets/label_example.png)
 
 ```text
-# Initial State editorlabel1 = Label([0, 100], [50, 50], "Cat", "green")label2 = Label([0, 0], [150, 150], "Dog", "red")label3 = Label([0, -100], [50, 50], "Mouse", "blue")
+# Initial State editor
+label1 = Label([0, 100], [50, 50], "Cat", "green")
+label2 = Label([0, 0], [150, 150], "Dog", "red")
+label3 = Label([0, -100], [50, 50], "Mouse", "blue")
 ```
 
 #### Label.rotate
@@ -660,24 +718,28 @@ graph_ax_t = Graph("$a_x", "Acceleration", "Time")
 
 `graph.plot(x, y, color=default_color)` — Adds a data point to your graph.
 
-Example:
-
-![Graph with two plots](../.gitbook/assets/tychos_graph.png)
-
 ```text
-# Initial State editorg = Graph("X Positions vs Time")# Calculations editor# Graphing a particle projectile's Y velocityg.plot(t, particle.pos[X], "blue")g.plot(t, particle.pos[Y], "red")
+# Initial State editor
+g = Graph("X Positions vs Time")
+
+# Calculations editor
+# Graphing a particle projectile's Y velocity
+g.plot(t, particle.pos[X], "blue")
+g.plot(t, particle.pos[Y], "red")
 ```
 
 #### Graph.integrate
 
 `graph.integrate(color=default_color)` — When you call the `plot` function of a graph, you create a new plot set. You can then integrate this plot set. This is done by referencing the plot set's color. This returns the calculated area based on the[ **trapezoidal method of approximation**](https://en.wikipedia.org/wiki/Trapezoidal_rule). 
 
-Example:
-
-![](../.gitbook/assets/integrate_example.png)
-
 ```text
-# Initial State editorg = Graph("Y Velocity")# Calculations editor# Graphing a particle projectile's Y velocityg.plot(t, particle.v[Y], "green")g.integrate("green")
+# Initial State editor
+g = Graph("Y Velocity")
+
+# Calculations editor
+# Graphing a particle projectile's Y velocity
+g.plot(t, particle.v[Y], "green")
+g.integrate("green")
 ```
 
 ### Meter
@@ -700,7 +762,11 @@ A `Meter` is a numeric display of data that you specify in the Calculations edit
 Example:
 
 ```text
-# Initial State editormt = Meter("Time")# Calculations editormt.display(t, "s")
+# Initial State editor
+mt = Meter("Time")
+
+# Calculations editor
+mt.display(t, "s")
 ```
 
 ### Gauge
@@ -722,7 +788,15 @@ A `Gauge` is an analog display of data that is very similar to a `Meter` that yo
 Example:
 
 ```text
-# Initial State editorg1 = Gauge("Value 1", 200, 0, "orange")g2 = Gauge("Value 2", 100, -100, "purple")g3 = Gauge("Value 3", 100, 0, "blue")# Calculations editorval = 44g1.display(val)g2.display(val)g3.display(val)
+# Initial State editor
+g1 = Gauge("Value 1", 200, 0, "orange")
+g2 = Gauge("Value 2", 100, -100, "purple")
+g3 = Gauge("Value 3", 100, 0, "blue")
+
+# Calculations editorval = 44
+g1.display(val)
+g2.display(val)
+g3.display(val)
 ```
 
 ## Interactivity
@@ -744,7 +818,11 @@ A `Toggle` is an interactive widget that allows you associate a boolean value \(
 Example:
 
 ```text
-# Initial State editort1 = Toggle("My Toggle")# Calculations editorisActive = t1.value
+# Initial State editor
+t1 = Toggle("My Toggle")
+
+# Calculations editor
+isActive = t1.value
 ```
 
 ### Slider
@@ -767,7 +845,11 @@ A `Slider` is an interactive widget that allows you to link a value in your scen
 Example:
 
 ```text
-# Initial State editors1 = Slider("I'm A Slider", 0, 100, 2)# Calculations editorx = s1.value
+# Initial State editor
+s1 = Slider("I'm A Slider", 0, 100, 2)
+
+# Calculations editor
+x = s1.value
 ```
 
 ### keyboard
@@ -813,7 +895,11 @@ You can create a representation of variable values, displayed in the **Data Outp
 Example:
 
 ```text
-# Initial State editortable.setColumns(["time", "x value", "y value"])# Calculations editorx = t * 2y = t / 2table.addRow([t, x, y])
+# Initial State editor
+table.setColumns(["time", "x value", "y value"])
+
+# Calculations editorx = t * 2y = t / 2
+table.addRow([t, x, y])
 ```
 
 The code above would generate this table:

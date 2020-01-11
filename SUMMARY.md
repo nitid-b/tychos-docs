@@ -14,7 +14,7 @@
   * [Tutorial 5: Graphs](learn/video-guides/untitled.md)
   * [Tutorial 6: Visualizing Vectors](learn/video-guides/tutorial-6-visualizing-vectors.md)
 * [Demonstrations](learn/demonstrations.md)
-* [Tychos Language Reference](learn/language-reference-api.md)
+* [Tychos API - Language Reference](learn/language-reference-api.md)
 
 ## For Teachers
 
