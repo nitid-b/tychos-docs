@@ -6,6 +6,57 @@
 
 * Some scenarios were crashing when the Settings pane was opened. We found the problem and now all scenarios should have an accessible Settings pane.
 
+## 2019-11-25
+
+### Added
+
+* **Hide/Show Panes:** Teachers can now hide different panes in order to more finely control access to different aspects of scenarios. In the Settings Pane, there is now an Access sub pane that allows you to show or hide one of the Hack Panels panes:
+
+![](.gitbook/assets/screen-shot-2020-01-16-at-4.53.32-pm.png)
+
+## 2019-11-9
+
+### Added
+
+* **Labels:**  
+  You can now add a Label object to your simulations. This gives users the ability to add and then animate text in the Tychos world.  
+  
+
+
+  ![](https://lh3.googleusercontent.com/zsW8BGWQ7DE2LUzh2MIQerk8WHNMIUzdZmpcztSuvhnlBic7OOb5RK4Tuc1jcTEF7d-oCaGtane37DGic9IVs9obJKrvwigt7Rl8MiSyng8ma9Z-5XxY98CDgkxUmoSIc3F1jWvv)
+
+  
+  
+  You can create text in any RGB color and define its size and position:  
+  
+  `myLabel = Label(position=[0, 0], size=[100, 100], “text”, “green")`  
+  
+  You can then rotate the text as well:  
+  
+  `myLabel.rotate(PI/4)`  
+  
+  Particle and Block objects can also be given a text labels. This is similar to the Label object.  
+  
+  `particle.addLabel(text="Hello", color="green")`  
+  
+  To learn more, check out our documentation here:  
+  
+  [https://docs.tychos.org/docs/learn/language-reference-api\#label](https://docs.tychos.org/docs/learn/language-reference-api#label)  
+
+* **Some New Useful Functions:** We have added some new useful functions. Here is a list of those functions and briefly what each one does: 
+  * `stop`:  Allows you to stop the simulation if a condition is met. The input can be any logical statement that can be evaluated to true or false.  `stop(test=false)` 
+  * `hasCollided`:  This function takes two Particle objects as its arguments and then returns true or false if the two Particles are overlapping. This function only works with particles at this time, but we plan on building in more sophisticated collision detection for blocks too!  `hasCollided(p1 = Particle, p2 = Particle)` 
+  * `getIntersect`:  This function returns a two dimensional matrix representing the minimum translation vector \(MTV\) that would be needed to separate two Particle objects when they overlap. This can be used to simulate collision forces based on the magnitude and direction of the MTV.  `getIntersect(source, target)` 
+  * `polar`:  This function is a utility function for quickly defining a 2d vector in polar form. It takes two required arguments, the scalar angle, and the scalar radial length. You can optionally include a tag of “deg” or “rad” to identify the angular units. The default value for units is “rad” for radians.  `polar(radius, angle, units=”rad”)`
+* **Code Presentation Mode** In the Settings Pane, you can now choose a new code color scheme that is better for presentation. Besides these changes we have added some other UI enhancements like better tooltips for the output gutter in the Initial State pane and the Calculations pane as well as a more organized Settings Panel. We hope you like the changes, and we are always looking for feedback and ideas on how to make Tychos better. A huge thanks to all the users that have contacted us and given us some great ideas!
+
+### Changed
+
+* **Graph Enhancements** We have added some new enhancements to graphs:
+  * Graphs are now resizable so that you can make them larger or smaller on the screen.
+  * You can alternatively “roll” up the graph into the panel title bar.
+  * We have added tooltips for the data points in the graphs.
+
 ## 2019-8-19
 
 ### Added
