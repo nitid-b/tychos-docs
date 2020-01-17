@@ -2,6 +2,11 @@
 
 * [Tychos Documentation and Reference](README.md)
 
+## Change Log - What's New?
+
+* [January 2020](january2020.md)
+* [December 2019](december-2019.md)
+
 ## Learn
 
 * [Overview](learn/overview.md)
