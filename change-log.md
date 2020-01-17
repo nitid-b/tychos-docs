@@ -1,5 +1,9 @@
 # Change Log
 
+## 2020-1-13
+
+* We have moved Tychos.org to different servers to improve reliability and monitoring. Tychos was unavailable for half a day—we appologize for that. Now that we have created this change history for Tychos, we will announce maintenance issues here.
+
 ## 2020-1-03
 
 ### Fixed
