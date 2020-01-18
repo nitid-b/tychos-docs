@@ -16,36 +16,33 @@
 
 * **Hide/Show Panes:** Teachers can now hide different panes in order to more finely control access to different aspects of scenarios. In the Settings Pane, there is now an Access sub pane that allows you to show or hide one of the Hack Panels panes:
 
-![](.gitbook/assets/screen-shot-2020-01-16-at-4.53.32-pm.png)
+![](../.gitbook/assets/screen-shot-2020-01-16-at-4.53.32-pm.png)
 
 ## 2019-11-9
 
 ### Added
 
 * **Labels:**  
+
   You can now add a Label object to your simulations. This gives users the ability to add and then animate text in the Tychos world.  
-  
 
+![](https://lh3.googleusercontent.com/zsW8BGWQ7DE2LUzh2MIQerk8WHNMIUzdZmpcztSuvhnlBic7OOb5RK4Tuc1jcTEF7d-oCaGtane37DGic9IVs9obJKrvwigt7Rl8MiSyng8ma9Z-5XxY98CDgkxUmoSIc3F1jWvv)
 
-  ![](https://lh3.googleusercontent.com/zsW8BGWQ7DE2LUzh2MIQerk8WHNMIUzdZmpcztSuvhnlBic7OOb5RK4Tuc1jcTEF7d-oCaGtane37DGic9IVs9obJKrvwigt7Rl8MiSyng8ma9Z-5XxY98CDgkxUmoSIc3F1jWvv)
+You can create text in any RGB color and define its size and position:
 
-  
-  
-  You can create text in any RGB color and define its size and position:  
-  
-  `myLabel = Label(position=[0, 0], size=[100, 100], “text”, “green")`  
-  
-  You can then rotate the text as well:  
-  
-  `myLabel.rotate(PI/4)`  
-  
-  Particle and Block objects can also be given a text labels. This is similar to the Label object.  
-  
-  `particle.addLabel(text="Hello", color="green")`  
-  
-  To learn more, check out our documentation here:  
-  
-  [https://docs.tychos.org/docs/learn/language-reference-api\#label](https://docs.tychos.org/docs/learn/language-reference-api#label)  
+`myLabel = Label(position=[0, 0], size=[100, 100], “text”, “green")`
+
+You can then rotate the text as well:
+
+`myLabel.rotate(PI/4)`
+
+Particle and Block objects can also be given a text labels. This is similar to the Label object.
+
+`particle.addLabel(text="Hello", color="green")`
+
+To learn more, check out our documentation here:
+
+[https://docs.tychos.org/docs/learn/language-reference-api\#label](https://docs.tychos.org/docs/learn/language-reference-api#label)
 
 * **Some New Useful Functions:** We have added some new useful functions. Here is a list of those functions and briefly what each one does: 
   * `stop`:  Allows you to stop the simulation if a condition is met. The input can be any logical statement that can be evaluated to true or false.  `stop(test=false)` 
@@ -67,8 +64,4 @@
 
 * **Data Output Table:** This is has been a feature that we have wanted to add for quite some time, and we have an initial version ready for you! With just a few lines of code, you can now create a data table for displaying variable values. This can be really helpful for recording a history of the simulation. We think this is a crucial tool for helping students connect the code they write to the simulation animation. You can create a data table by setting the columns in the Initial State Pane like this:  `table.setColumns(["column1", "column2", ...])`  Where the array of strings `"column1"` and `"column2"` would be the table column headers. You must have a table with at least one column, but you can have many more. Then you can record a new row in the table using this command in the Calculations Pane:  `table.addRow([val1, val2, ...])`  Where the array of values for example - `val1` and `val2` - could be any variable values you would like to record. The array of values must have the same number of values as columns in the table. 
 * **Mouse Interactivity** You can now get the position of the mouse mapped to the simulation extents. This allows you, for example, to build interactive simulations where Particles or Blocks can respond to the mouse position. To do so, you simply just need to reference the mouse position like this:  `mouse.pos`  This will return the mouse position within the scenario coordinate system. We have also added the ability to detect “mouse over” events. The following function allows you to test if the mouse is over a Particle or a Block:  `# Where p is a Particle, but could be a Block too! mouse.is_over(p)`  Here is a demonstration to check out these the new mouse interaction features:  [https://tychos.org/scenarios/nQqTE7](https://tychos.org/scenarios/nQqTE7) 
-
-
-
-
 

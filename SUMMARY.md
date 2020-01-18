@@ -1,7 +1,10 @@
 # Table of contents
 
 * [Tychos Documentation and Reference](README.md)
-* [Change Log](change-log.md)
+
+## General
+
+* [Change Log](general/change-log.md)
 
 ## Learn
 
@@ -34,9 +37,4 @@
 * [Writing Goals](for-teachers/writing-goals.md)
 * [Canvas LTI Installation Guide](for-teachers/canvas-lti-installation-guide.md)
 * [Teacher Forum](https://tychos.org/doc/teacher/forum.html)
-
-## About Us
-
-* [The Team](about-us/the-team.md)
-* [Blog](http://blog.tychos.org/)
 
