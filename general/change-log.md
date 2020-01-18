@@ -2,7 +2,7 @@
 
 ## 2020-1-13
 
-* **Moved Tychos.org servers:** We have moved Tychos.org to different servers to improve reliability and monitoring. Tychos was unavailable for half a day—we appologize for that. Now that we have created this change history for Tychos, we will announce maintenance issues here.
+* **Moved Tychos.org servers:** We have moved Tychos.org to different servers to improve reliability and monitoring. Tychos was unavailable for half a day—we apologize for that. Now that we have created this change history for Tychos, we will announce maintenance issues here.
 
 ## 2020-1-03
 
@@ -14,7 +14,7 @@
 
 ### Added
 
-* **Hide/Show Panes:** Teachers can now hide different panes in order to more finely control access to different aspects of scenarios. In the Settings Pane, there is now an Access sub pane that allows you to show or hide one of the Hack Panels panes:
+* **Hide/Show Panes:** Teachers can now hide different panes in order to more finely control access to different aspects of scenarios. In the Settings Pane, there is now an Access sub pane that allows you to show or hide one of the Hack Panel's panes:
 
 ![](../.gitbook/assets/screen-shot-2020-01-16-at-4.53.32-pm.png)
 
@@ -22,27 +22,27 @@
 
 ### Added
 
+![](../.gitbook/assets/image.png)
+
 * **Labels:**  
 
-  You can now add a Label object to your simulations. This gives users the ability to add and then animate text in the Tychos world.  
-
-![](https://lh3.googleusercontent.com/zsW8BGWQ7DE2LUzh2MIQerk8WHNMIUzdZmpcztSuvhnlBic7OOb5RK4Tuc1jcTEF7d-oCaGtane37DGic9IVs9obJKrvwigt7Rl8MiSyng8ma9Z-5XxY98CDgkxUmoSIc3F1jWvv)
-
-You can create text in any RGB color and define its size and position:
-
-`myLabel = Label(position=[0, 0], size=[100, 100], “text”, “green")`
-
-You can then rotate the text as well:
-
-`myLabel.rotate(PI/4)`
-
-Particle and Block objects can also be given a text labels. This is similar to the Label object.
-
-`particle.addLabel(text="Hello", color="green")`
-
-To learn more, check out our documentation here:
-
-[https://docs.tychos.org/docs/learn/language-reference-api\#label](https://docs.tychos.org/docs/learn/language-reference-api#label)
+  You can now add a Label object to your simulations. This gives users the ability to add and then animate text in the Tychos world.    
+  
+  You can create text in any RGB color and define its size and position:  
+  
+  `myLabel = Label(position=[0, 0], size=[100, 100], “text”, “green")`  
+  
+  You can then rotate the text as well:  
+  
+  `myLabel.rotate(PI/4)`  
+  
+  Particle and Block objects can also be given a text labels. This is similar to the Label object.  
+  
+  `particle.addLabel(text="Hello", color="green")`  
+  
+  To learn more, check out our documentation here:  
+  
+  [https://docs.tychos.org/docs/learn/language-reference-api\#label](https://docs.tychos.org/docs/learn/language-reference-api#label)  
 
 * **Some New Useful Functions:** We have added some new useful functions. Here is a list of those functions and briefly what each one does: 
   * `stop`:  Allows you to stop the simulation if a condition is met. The input can be any logical statement that can be evaluated to true or false.  `stop(test=false)` 
