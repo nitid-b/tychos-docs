@@ -24,13 +24,13 @@ Some scenarios were crashing when the Settings pane was opened. We found the pro
 
 Teachers can now hide different panes in order to more finely control access to different aspects of scenarios. In the Settings Pane, there is now an Access sub pane that allows you to show or hide one of the Hack Panel's panes:
 
-![](../.gitbook/assets/screen-shot-2020-01-16-at-4.53.32-pm.png)
+![](.gitbook/assets/screen-shot-2020-01-16-at-4.53.32-pm.png)
 
 ## 2019-11-9
 
 ### Added
 
-![](../.gitbook/assets/image.png)
+![](.gitbook/assets/image.png)
 
 #### **Labels:**  
 
