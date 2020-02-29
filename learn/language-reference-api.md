@@ -360,46 +360,62 @@ stop(buggy.pos[X] == 100) # simulation stops when X position of particle equals 
 
 ### Collision Functions
 
-{% hint style="info" %}
-The following functions currently only support collisions with **Particles**. These are meant to be used as helper functions for easily simulating collisions. We are working on adding more complex functions that work with **Blocks**, but at this time, these functions only work with **Particles.**
-{% endhint %}
+The following functions are meant to help users model collisions more easily. These functions could be used for other purposes rather than modeling collisions as Tychos is not a physics engine. These functions could be thought of as "overlap" functions. They return information about the _overlap_ of objects.
 
 #### hasCollided
 
-This function returns a boolean true/false value when two `Particle` objects are given as the source and target. It returns false if the two particles are not determined to be _overlapping_, meaning that the distance between their positions is less than the sum of their radii.
+This function returns a boolean true/false value when two objects are given as the source and target. It returns false if the two objects are not determined to be _overlapping._
 
 `hasCollided(source, target)` -&gt; returns a boolean `true` or `false`.
 
-* `source` - `Particle` object 
-* `angle` - `Particle` object
+* `source` - `Particle` or `Block` object 
+* `target` - `Particle` or `Block` object
 
 Example:
 
+![](../.gitbook/assets/hascollided_example.png)
+
 ```text
-p1 = Particle([0, 0], 10)
-p2 = Particle([25, 0], 10)
-p3 = Particle([-15, 0], 10)
-hasCollided(p1, p2)            # returns false
-hasCollided(p1, p3)            # returns true
+# Initial State
+p1 = Particle([15, 0], 10, rgba(0, 200, 200, .6))
+b1 = Block([0, 0], [15, 15], rgba(200, 0, 200, .6))
+b1.rotate(45)
+p3 = Particle([-15, 0], 10, rgba(0, 0, 200, .6))
+```
+
+```text
+# Calculations
+hasCollided(p1, b1)            # returns true
+hasCollided(b1, p3)            # returns true
+hasCollided(p1, p3)            # returns false
 ```
 
 #### getIntersect
 
-This function returns a two dimensional matrix representing the minimum translation vector \(MTV\) that would be needed to separate two `Particle` objects when they overlap. This can be used to simulate collision forces based on the magnitude and direction of the MTV.
+This function returns a two dimensional matrix representing the _minimum translation vector_ \(MTV\) that would be needed to separate two objects when they overlap. This can be used to simulate collision forces or to move objects apart based on the magnitude and direction of the MTV.
 
 `getIntersect(source, target)` -&gt; returns a two dimensional matrix.
 
-* `source` - `Particle` object 
-* `angle` - `Particle` object
+* `source` - `Particle` or `Block` object 
+* `target` - `Particle` or `Block` object
 
 Example:
 
+![](../.gitbook/assets/getintersect_example.png)
+
 ```text
-p1 = Particle([0, 0], 10)
-p2 = Particle([25, 0], 10)
-p3 = Particle([-15, 0], 10)
-getIntersect(p1, p2)            # returns [0, 0]
-getIntersect(p1, p3)            # returns [5, 0]
+# Initial State
+p1 = Particle([0, 0], 10, rgba(200, 200, 200, .6))
+p2 = Particle([12, 10], 10, rgba(0, 200, 0, .6))
+b1 = Block([-12, 0], [15, 15], rgba(200, 0, 0, .6))
+```
+
+```text
+# Calculations
+mtv1 = getIntersect(p1, p2)
+mtv2 = getIntersect(p1, b1)
+drawArrow(p1.pos, mtv1, "green")
+drawArrow(p1.pos, mtv2, "red")
 ```
 
 ### Comparison Functions

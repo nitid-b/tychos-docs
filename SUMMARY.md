@@ -4,8 +4,8 @@
 
 ## General
 
-* [Our Team](general/our-team.md)
-* [Change Log](general/change-log.md)
+* [Change Log](change-log.md)
+* [Our Team](our-team.md)
 
 ## Learn
 
