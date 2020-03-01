@@ -1,5 +1,25 @@
 # Change Log
 
+## 2020-2-28
+
+### Changed
+
+#### Collision Functions
+
+We have greatly enhanced two functions for helping model collisions. Collision detection and resolution are typically quite difficult for students to program. We have added the ability to detect as well as assist in the modeling of collision resolution much easier.  The functions and how they have been enhanced are listed below:
+
+* `hasCollided(source, target)`:   This function takes two objects \(`Particle` or `Block`\) as its arguments and then returns true or false if the two objects are overlapping.   
+* `getIntersect(source, target)`:   This function returns a two dimensional matrix representing the minimum translation vector \(MTV\) that would be needed to separate two objects when they overlap. This can be used to simulate collision forces based on the magnitude and direction of the MTV.
+
+For some good examples of how these functions can be used to model realistic collisions, check out these demonstrations:
+
+* [Demo: Particle In A Box](https://www.tychos.org/en/scenarios/sae23y)
+* [Demo: Modeling Collisions With An Elastic Force](https://www.tychos.org/en/scenarios/vugK2C)
+
+####  General Download Speed Increases
+
+We have made some significant improvements in load times for Tychos when you first visit the site due to utilizing some caching and compression technologies. We hope you appreciate the faster loading times! 
+
 ## 2020-1-13
 
 ### Changed
