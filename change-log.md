@@ -1,5 +1,56 @@
 # Change Log
 
+## 2020-3-19
+
+### Added
+
+#### Frame History
+
+Tychos now provides a way to access all the variables defined in the simulation at any frame. When writing goals it is often useful to compare a variable's value from one point of the simulation to another. For example, you might want to check if a Particle has moved, or accelerated. You can now do this because all your variable values are stored for each frame of the simulation.
+
+To access a frame, you can simply type:
+
+```text
+frame(10)
+```
+
+This captures all the variables values at frame 10. This is essentially a snap-shot of the simulation at that frame. To access an object and its properties \(for example, the position of a particle\) you simply use the "dot" notation:
+
+```text
+# Access a Particle's (called "puck") position at frame 10
+frame(10).puck.pos
+```
+
+This allows you to compare attributes of various objects or variables from one frame to another. So for example we can test to see if the "puck" particle has moved a certain distance by a specified time:
+
+![](.gitbook/assets/screen-shot-2020-03-19-at-1.54.13-pm.png)
+
+In this case the Goal is:
+
+1. **Description**_:_ "_Move the particle a distance of 10 from the origin after two seconds."_
+2. **When Condition:** "_`t == 2`"_
+3. **Victory Condition**: "`distance(frame(0).puck.pos, puck.pos) == 10`"
+
+The **victory condition** in this case calculates the distance between the position of the "puck" particle's position at frame 0 and the current position of the "puck" particle when the time is 2 seconds.
+
+You could also use frames to test if a particle is moving in a specific direction:
+
+```text
+# Is the puck moving in the positive X direction?
+frame(1).puck.pos[X] > frame(0).puck.pos[X] >
+```
+
+We think this is a great improvement to writing better Goals, and we hope you like it.
+
+#### **Some New Useful Functions:**
+
+We have added some new useful functions. Here is a list of those functions and briefly what each one does: 
+
+* `between(value, min, max)` :   This function allows you to see if a value is between a minimum value and a maximum value. It is exclusive.
+* `constrain(value, min, max)`:   This function takes a value and then constrains it to a minimum value or a maximum value.   
+* `perpCW(vec)`:   This function returns a two dimensional matrix representing the clockwise perpendicular vector of the given vector.
+* `perpCCW(vec)`:   This function returns a two dimensional matrix representing the counter-clockwise perpendicular vector of the given vector.
+
 ## 2020-2-28
 
 ### Changed
