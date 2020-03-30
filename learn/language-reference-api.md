@@ -653,9 +653,9 @@ The above image also demonstrates the use of the `direction` function as well as
 
 You can represent a spring in Tychos using the `Spring` class. A `Spring` is a visual representation of a common elastic connector that displays a given number of coils that dynamically change shape once the dimensions of the  `Spring` are changed in the **Calculations Pane**.
 
-`Spring(pos1=[0,0], pos2=[100, 0], color=default_color, coils=5, width=10, thickness=1)` -&gt; returns a `Spring` object
+`Spring(pos=[0,0], pos2=[100, 0], color=default_color, coils=5, width=10, thickness=1)` -&gt; returns a `Spring` object
 
-* `pos1` — The position of one end of the `Spring`. If you don't specify a position, the default value of \[0,0\] is used.
+* `pos` — The position of one end of the `Spring`. If you don't specify a position, the default value of \[0,0\] is used.
 * `pos2` — The position of one other end of the `Spring`. If you don't specify a position, the default value of \[100,0\] is used.
 * `color` — The block will be drawn in this color. Use HTML colors e.g. "\#ff3300", "blue".
 * `coils` — This is the number of coils represented.
