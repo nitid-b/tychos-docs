@@ -7,6 +7,7 @@
 * [Change Log](change-log.md)
 * [Our Team](our-team.md)
 * [Privacy Policy](privacy-policy.md)
+* [Terms of Service](terms-of-service.md)
 
 ## Learn
 
